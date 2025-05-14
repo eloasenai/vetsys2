@@ -1,19 +1,74 @@
 .top-bar {
-    width: 2000px;
-    height: 157px; 
-    background-color: #FFF0B9;
-    position: fixed; 
-    top: 0;
-    left: 0;
-    z-index: 1000; 
-    display: flex;
-    align-items: center; 
-    justify-content: space-between; 
-    padding: 0 20px; 
-  }
+  width: 100%;
+  height: 157px;
+  background-color: #FFF0B9;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.top-bar img {
+  height: 150px;
+  cursor: pointer;
+}
+
+.search-bar {
+  width: 489px; 
+  margin-right: 395px;
+  margin-top: -70px;
+  padding: 10px;
+  border: 1px solid #000000;
+  border-radius: 20px; 
+  outline: none;
+  font-size: 16px;
+  background-color: rgba(0, 0, 0, 0.288);
+  color: #000000;
   
-  .top-bar img {
-    height: 150px; 
-    cursor: pointer; 
-  }
+}
+
+.image-container {
+  margin-top: 10px; /* Ajuste para posicionar a imagem abaixo da barra */
+  display: flex;
+  margin-left: 150px;
+  justify-content: center;
+  border-radius: 20px   ; 
+   
+}
+
+.initial-image {
+  max-width: 100%;
+  height: auto;
+  position: fixed; /* Torna a imagem fixa na tela */
+  top: 50%; /* Centraliza verticalmente */
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translate(-50%, -50%); /* Ajusta o ponto de ancoragem para o centro */
+  z-index: -1; /* Coloca a imagem atrás de outros elementos */
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px; /* Ajuste para posicionar os botões acima da imagem */
   
+}
+
+.nav-button {
+  width: 200px;
+  height: 72px;
+  margin-left: 60px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px; 
+  font-size: 14px;
+  
+}
+
+.nav-button:hover {
+  background-color: #444; /* Cor ao passar o mouse */
+}
