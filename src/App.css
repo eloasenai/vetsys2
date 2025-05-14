@@ -1,6 +1,6 @@
 .top-bar {
     width: 2000px;
-    height: 157px; 
+    height: 100px; 
     background-color: #FFF0B9;
     position: fixed; 
     top: 0;
@@ -13,7 +13,56 @@
   }
   
   .top-bar img {
-    height: 150px; 
+    height: 100px; 
     cursor: pointer; 
   }
-  
+
+.profile-icon {
+  font-size: 40px;
+  color: #555;
+  cursor: pointer;
+}
+
+i{
+  font-size: 40px;
+  color: #555;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+
+
+/* App.css */
+
+.top-bar {
+  background-color: #FFF0B9;  /* Cor de fundo clara */
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo {
+  height: 50px;  /* Ajuste o tamanho do logo */
+}
+
+i {
+  cursor: pointer;
+  color: #333;  /* Cor do ícone */
+  margin-right: 200px;
+}
+
+.top-bar > div {
+  display: flex;
+  align-items: center;
+}
+
+.d-flex {
+  display: flex;
+}
+
+
+.text-decoration-none {
+  text-decoration: none;  /* Remove o sublinhado do link */
+}
