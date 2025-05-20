@@ -1,35 +1,37 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./App.css";
+import React from "react";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router";
 
-function App() {
-  const [count, setCount] = useState(0);
+import Header from "./components/header/Header";
+import Cadastro from "./pages/Cadastro";
+import Cadastro from "./pages/Cadastro";
+
+const AppWrapper = () => {
+  const location = useLocation();
+
+  // Esconde o Header na página de cadastro
+  const hideHeaderRoutes = ["/cadastro"];
+  const shouldHideHeader = hideHeaderRoutes.includes(location.pathname);
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      {!shouldHideHeader && <Header />}
+      <Routes>
+        <Route path="/cadastro" element={<Cadastro />} />
+        {/* Outras rotas aqui */}
+      </Routes>
     </>
   );
-}
+};
+
+const App = () => {
+  return (
+    <BrowserRouter>
+      <AppWrapper />
+    </BrowserRouter>
+  );
+};
 
 export default App;
