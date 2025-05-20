@@ -6,8 +6,6 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router";
 
 import Header from "./components/header/Header";
 import Cadastro from "./pages/Cadastro";
-import Cadastro from "./pages/Cadastro";
-
 const AppWrapper = () => {
   const location = useLocation();
 
