@@ -2,17 +2,34 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./App.css";
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router"; // Certifique-se de usar "react-router-dom"
-import Header from "./components/header/Header";
-import Login from "./pages/Login";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router";
 
-export const App = () => {
+import Header from "./components/header/Header";
+import Cadastro from "./pages/Cadastro";
+import Cadastro from "./pages/Cadastro";
+
+const AppWrapper = () => {
+  const location = useLocation();
+
+  // Esconde o Header na página de cadastro
+  const hideHeaderRoutes = ["/cadastro"];
+  const shouldHideHeader = hideHeaderRoutes.includes(location.pathname);
+
+  return (
+    <>
+      {!shouldHideHeader && <Header />}
+      <Routes>
+        <Route path="/cadastro" element={<Cadastro />} />
+        {/* Outras rotas aqui */}
+      </Routes>
+    </>
+  );
+};
+
+const App = () => {
   return (
     <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/login" element={<Login />} /> {/* Rota para login */}
-      </Routes>
+      <AppWrapper />
     </BrowserRouter>
   );
 };

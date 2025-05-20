@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router"; // Correto
 
 const Header = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const history = useNavigate();
+  const navigate = useNavigate(); // Substitui useHistory
 
   const handleSearch = (e) => {
     e.preventDefault();
     if (searchTerm.trim()) {
-      history.push(`/search?q=${encodeURIComponent(searchTerm.trim())}`);
+      navigate(`/search?q=${encodeURIComponent(searchTerm.trim())}`);
     }
   };
 
@@ -26,9 +26,9 @@ const Header = () => {
           />
         </Link>
 
-        {/* Barra de Pesquisa com ícone ao lado */}
+        {/* Barra de Pesquisa */}
         <div className="d-flex align-items-center mx-auto w-50">
-          <form className="d-flex flex-grow-1 me-3" role="search" onSubmit={handleSearch}>
+          <form className="d-flex flex-grow-1 me-3" onSubmit={handleSearch}>
             <input
               className="form-control me-2 rounded-pill bg-light bg-opacity-75 border-0 shadow-sm"
               type="search"
@@ -46,25 +46,21 @@ const Header = () => {
             </button>
           </form>
 
-          {/* Ícone da sacola ao lado direito da barra */}
-          <Link
-            to="/carrinho"
-            className="text-light fs-4"
-            title="Minha sacola"
-          >
+          {/* Ícone da sacola */}
+          <Link to="/carrinho" className="text-light fs-4" title="Minha sacola">
             <i className="bi bi-handbag"></i>
           </Link>
         </div>
 
-        {/* Login */}
+        {/* Cadastro */}
         <Link
-          to="/login"
+          to="/cadastro" /* Alterado de "/login" para "/cadastro" */
           role="button"
           className="d-flex gap-3 justify-content-center align-items-center text-decoration-none text-light"
         >
           <i className="bi bi-person-circle fs-3"></i>
           <div className="d-none d-md-flex flex-column m-0 w-50">
-            <span className="h6 m-0 text-dark">Olá, faça seu login </span>
+            <span className="h6 m-0 text-dark">Olá, faça seu cadastro</span> {/* Texto atualizado */}
           </div>
         </Link>
 
