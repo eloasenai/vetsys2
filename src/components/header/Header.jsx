@@ -57,7 +57,6 @@ const Header = () => {
           to="/cadastro" /* Alterado de "/login" para "/cadastro" */
           role="button"
           className="d-flex gap-3 justify-content-center align-items-center text-decoration-none text-light"
-          className="d-flex gap-3 justify-content-center align-items-center text-decoration-none text-light"
         >
           <i className="bi bi-person-circle fs-3"></i>
           <div className="d-none d-md-flex flex-column m-0 w-50">
