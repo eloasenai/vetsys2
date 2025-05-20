@@ -15,10 +15,10 @@ const [nome, setNome] = useState("");
   };
   return (
     <div>
-        <div className="container-fluid d-flex flex-column justify-content-center align-items-center vh-100" style={{marginLeft: "500px",width: "100%"}} >
+        <div className="container-fluid d-flex flex-column justify-content-center align-items-center vh-100" style={{marginLeft: "700px",width: "70%"}} >
             <div className="card w-50">
             <div className="card-body">
-                <h5 className="card-title">Login</h5>
+                <h5 className="card-title">BEM-Vindo ao VetSys!</h5>
                 <form onSubmit={handleLogin}>
                 <div className="mb-3">
                     <label htmlFor="nome" className="form-label">Nome</label>
