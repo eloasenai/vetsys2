@@ -1,19 +1,12 @@
-.top-bar {
-    width: 2000px;
-    height: 157px; 
-    background-color: #FFF0B9;
-    position: fixed; 
-    top: 0;
-    left: 0;
-    z-index: 1000; 
-    display: flex;
-    align-items: center; 
-    justify-content: space-between; 
-    padding: 0 20px; 
-  }
-  
-  .top-bar img {
-    height: 150px; 
-    cursor: pointer; 
-  }
-  
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #FFF0B9;
+  height: 95px;
+}
+
+.navbar .d-flex {
+  z-index: 1; /* Garante que o link esteja acima de outros elementos */
+}
