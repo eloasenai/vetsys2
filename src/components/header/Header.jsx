@@ -1,10 +1,12 @@
 import React from "react";
-import { Link } from "react-router"; 
-
+import { Link } from "react-router";
 
 const Header = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg header ">
+    <nav
+      className="navbar navbar-expand-lg navbar-dark bg header"
+      style={{ height: "-20px" }}
+    >
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
           <img
@@ -16,13 +18,13 @@ const Header = () => {
         </Link>
 
         <Link
-          to="/login"
+          to="/cadastro"
           role="button"
-        className="d-flex gap-3 justify-content-center align-items-center text-decoration-none text-light"
+          className="d-flex gap-3 justify-content-center align-items-center text-decoration-none text-light"
         >
           <i className="bi bi-person-circle fs-3"></i>
           <div className="d-none d-md-flex flex-column m-0 w-50">
-            <span className="h6 m-0 text-dark">Olá, faça seu login </span>
+            <span className="h6 m-0 text-dark">Olá, faça seu cadastro</span>
           </div>
         </Link>
       </div>
