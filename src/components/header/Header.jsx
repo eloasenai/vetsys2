@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 const Header = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const history = useHistory();
+  const history = useNavigate();
 
   const handleSearch = (e) => {
     e.preventDefault();
