@@ -1,33 +1,33 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./App.css";
 import React from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router";
-
 import Header from "./components/header/Header";
 import Cadastro from "./pages/Cadastro";
-const AppWrapper = () => {
-  const location = useLocation();
+import Entrar from "./pages/Entrar";
+import Footer from "./components/footer/Footer";
 
-  // Esconde o Header na página de cadastro
-  const hideHeaderRoutes = ["/cadastro"];
-  const shouldHideHeader = hideHeaderRoutes.includes(location.pathname);
+  const AppWrapper = () => {
+    const location = useLocation();
+  
+    // Ocultar o Header nas páginas "Entrar" e "Cadastro"
+    const hideHeaderRoutes = ["/entrar", "/cadastro"];
+    const shouldHideHeader = hideHeaderRoutes.includes(location.pathname);
 
+ 
   return (
     <>
-      {!shouldHideHeader && <Header />}
+   {!shouldHideHeader && <Header />} {/* Renderiza o Header apenas se não estiver nas rotas ocultas */}
       <Routes>
+        <Route path="/entrar" element={<Entrar />} />
         <Route path="/cadastro" element={<Cadastro />} />
-        {/* Outras rotas aqui */}
       </Routes>
     </>
   );
 };
-
 const App = () => {
   return (
     <BrowserRouter>
-      <AppWrapper />
+ <AppWrapper /> 
     </BrowserRouter>
   );
 };
