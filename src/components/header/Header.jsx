@@ -45,34 +45,7 @@ const Header = () => {
           }}
         />
 
-        {/* Botões acima da imagem */}
-        <div
-          style={{
-            position: "absolute",
-            top: "-40px", // Posiciona os botões acima da imagem
-            left: "50%",
-            transform: "translateX(-50%)", // Centraliza os botões horizontalmente
-            display: "flex",
-            gap: "10px", // Espaçamento entre os botões
-          }}
-        >
-          <button style={{ padding: "10px 20px", borderRadius: "5px" }}>
-            Botão 1
-          </button>
-          <button style={{ padding: "10px 20px", borderRadius: "5px" }}>
-            Botão 2
-          </button>
-          <button style={{ padding: "10px 20px", borderRadius: "5px" }}>
-            Botão 3
-          </button>
-          <button style={{ padding: "10px 20px", borderRadius: "5px" }}>
-            Botão 4
-          </button>
-          <button style={{ padding: "10px 20px", borderRadius: "5px" }}>
-            Botão 5
-          </button>
-        </div>
-
+      
         <div
           style={{
             position: "absolute",
@@ -111,14 +84,15 @@ const Header = () => {
           <div className="d-flex align-items-center mx-auto w-50 #">
             <form className="d-flex flex-grow-1 me-3" onSubmit={handleSearch}>
               <input
-                className="form-control me-2 rounded-pill bg-light bg-opacity-75 shadow-sm"
+            
+                className="form-control me-2 rounded-pill shadow-sm"
                 type="search"
                 placeholder="Buscar"
                 aria-label="Search"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 style={{
-                  backdropFilter: "blur(4px)",
+                backgroundColor:"#0000001c",
                   border: "1px solid black", // Borda preta
                 }}
               />
