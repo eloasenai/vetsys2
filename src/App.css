@@ -34,6 +34,41 @@
   width: 50%; /* Ajuste a largura do formulário */
 }
 
+/* Estilo para os blocos amarelos */
+.yellow-blocks {
+  display: flex;
+  justify-content: center; 
+  margin-top: 80px; 
+}
+
+.yellow-block {
+  display: flex; 
+  flex-direction: row; 
+  align-items: center; 
+  justify-content: center; 
+  background-color: #FFFDAF; 
+  border: 2px solid #FFBD00; 
+  flex: 1 1 calc(25% - 20px); 
+  max-width: 800px; 
+  min-width: 150px; 
+  text-align: center; 
+  padding: 30px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  font-weight: bold; 
+  color: #000000;
+  gap: 10px; 
+}
+
+.yellow-block i {
+  font-size: 30px; 
+  color: #000000; 
+}
+
+.yellow-block span {
+  font-size: 14px; 
+  font-weight: bold; 
+}
+
 .entrar-container {
   display: flex;
   align-items: center;

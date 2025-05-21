@@ -6,6 +6,7 @@ import Cadastro from "./pages/Cadastro";
 import Entrar from "./pages/Entrar";
 import Footer from "./components/footer/Footer";
 
+
   const AppWrapper = () => {
     const location = useLocation();
   
@@ -24,6 +25,10 @@ import Footer from "./components/footer/Footer";
     </>
   );
 };
+
+   
+          
+        
 const App = () => {
   return (
     <BrowserRouter>
