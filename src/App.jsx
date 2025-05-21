@@ -1,5 +1,3 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./App.css";
 import React from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router";
