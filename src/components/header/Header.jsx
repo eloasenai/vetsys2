@@ -50,7 +50,7 @@ const Header = () => {
           style={{
             position: "absolute",
             top: "151px",
-            right: "250px",
+            right: "355px",
             width: "150px",
             height: "150px",
             backgroundColor: "#ffffff",
