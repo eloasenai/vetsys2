@@ -12,8 +12,8 @@ const Cadastro = () => {
 
   const handleCadastro = (e) => {
     e.preventDefault();
-    if (nome && email) {
-      localStorage.setItem("devcadastro", JSON.stringify({ nome, email }));
+    if (nome && sobrenome && email && senha && confirmarSenha) {
+      localStorage.setItem("devcadastro", JSON.stringify({ nome, sobrenome, email, senha, confirmarSenha }));
       navigate("/"); // redireciona para a tela inicial
     }
   };
@@ -38,6 +38,7 @@ const Cadastro = () => {
                   Nome
                 </label>
                 <input
+                  style={{ borderColor: "black" }}
                   type="text"
                   className="form-control"
                   id="nome"
@@ -62,6 +63,7 @@ const Cadastro = () => {
                   Email
                 </label>
                 <input
+                  style={{ borderColor: "black" }}
                   type="email"
                   className="form-control"
                   id="email"

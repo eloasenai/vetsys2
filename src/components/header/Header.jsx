@@ -1,9 +1,16 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router"; // Correto
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router";
 
 const Header = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const navigate = useNavigate(); // Substitui useHistory
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const navigate = useNavigate();
+
+  // Checa se o usuário está logado (por exemplo, após login ou cadastro)
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    setIsAuthenticated(!!user); // true se existir user
+  }, []);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -19,10 +26,10 @@ const Header = () => {
         {/* Logo */}
         <Link className="navbar-brand" to="/">
           <img
-            src="/assets/img/logo.png"
+            src="src/assets/img/logo.png"
             alt="Logo"
             className="logo"
-            style={{ height: "40px" }}
+            style={{ height: "90px" }}
           />
         </Link>
 
@@ -36,12 +43,9 @@ const Header = () => {
               aria-label="Search"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              style={{ backdropFilter: "blur(4px)" }}
+              style={{color:"transparent" }}
             />
-            <button
-              className="btn btn-outline-light rounded-pill px-4"
-              type="submit"
-            >
+            <button className="btn btn-light rounded-pill px-4"style={{color:"#CBB883"}} type="submit">
               Buscar
             </button>
           </form>
@@ -52,18 +56,42 @@ const Header = () => {
           </Link>
         </div>
 
-        {/* Cadastro */}
-        <Link
-          to="/cadastro" /* Alterado de "/login" para "/cadastro" */
-          role="button"
-          className="d-flex gap-3 justify-content-center align-items-center text-decoration-none text-light"
-        >
-          <i className="bi bi-person-circle fs-3"></i>
-          <div className="d-none d-md-flex flex-column m-0 w-50">
-            <span className="h6 m-0 text-dark">Olá, faça seu cadastro</span> {/* Texto atualizado */}
-          </div>
-        </Link>
-
+        {/* Autenticação */}
+        {isAuthenticated ? (
+          // Se logado, mostra só o ícone de perfil
+          <Link
+            to="/perfil"
+            role="button"
+            className="d-flex justify-content-center align-items-center text-decoration-none text-light"
+            title="Meu perfil"
+          >
+            <i className="bi bi-person-circle fs-3"></i>
+          </Link>
+        ) : (
+          // Se não logado, mostra Entrar e Cadastrar-se
+          <>
+            <Link
+              to="/entrar"
+              role="button"
+              className="d-flex gap-3 justify-content-center align-items-center text-decoration-none text-light"
+            >
+              <i className="bi bi-person-circle fs-3"></i>
+              <div className="d-none d-md-flex flex-column m-0 w-50">
+                <span className="h6 m-0 text-dark">Entrar</span>
+              </div>
+            </Link>
+            <Link
+              to="/cadastro"
+              role="button"
+              className="d-flex gap-3 justify-content-center align-items-center text-decoration-none text-light"
+            >
+              <i className="bi bi-person-plus fs-3"></i>
+              <div className="d-none d-md-flex flex-column m-0 w-50">
+                <span className="h6 m-0 text-dark">Cadastrar-se</span>
+              </div>
+            </Link>
+          </>
+        )}
       </div>
     </nav>
   );
