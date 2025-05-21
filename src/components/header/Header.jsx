@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router"; // Correto
+import { Link, useNavigate } from "react-router"; 
 import gatoecachorro from "../../assets/img/gatoecachorro.png";
+
 
 const Header = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -32,35 +33,6 @@ const Header = () => {
           }}
         />
 
-        {/* Botões acima da imagem */}
-        <div
-          style={{
-            position: "absolute",
-            top: "-40px", // Posiciona os botões acima da imagem
-            left: "50%",
-            transform: "translateX(-50%)", // Centraliza os botões horizontalmente
-            display: "flex",
-            gap: "10px", // Espaçamento entre os botões
-          }}
-        >
-          <button style={{ padding: "10px 20px", borderRadius: "5px" }}>
-            Botão 1
-          </button>
-          <button style={{ padding: "10px 20px", borderRadius: "5px" }}>
-            Botão 2
-          </button>
-          <button style={{ padding: "10px 20px", borderRadius: "5px" }}>
-            Botão 3
-          </button>
-          <button style={{ padding: "10px 20px", borderRadius: "5px" }}>
-            Botão 4
-          </button>
-          <button style={{ padding: "10px 20px", borderRadius: "5px" }}>
-            Botão 5
-          </button>
-        </div>
-
-       
         <div
           style={{
             position: "absolute",
@@ -81,7 +53,33 @@ const Header = () => {
         >
           20% off
         </div>
+
+       
       </div>
+
+      <div className="image-container">
+        {/* Blocos amarelos */}
+        <div className="yellow-blocks">
+          <div className="yellow-block">
+          <i class="bi bi-truck"></i>
+            <span>Frete grátis</span>
+          </div>
+          <div className="yellow-block">
+          <i class="bi bi-credit-card-2-back-fill"></i>
+            <span>Promoções</span>
+          </div>
+          <div className="yellow-block">
+          <i class="bi bi-cart3"></i>
+            <span>Até 10x sem juros</span>
+          </div>
+          <div className="yellow-block">
+          <i class="bi bi-house-fill"></i>
+            <span>Retire e troque na loja</span>
+          </div>
+        </div>
+      </div>
+
+
 
       <nav className="navbar navbar-expand-lg navbar-dark bg header">
         <div className="container-fluid d-flex justify-content-between align-items-center">
@@ -95,8 +93,9 @@ const Header = () => {
             />
           </Link>
 
+
           {/* Barra de Pesquisa */}
-          <div className="d-flex align-items-center mx-auto w-50 #">
+          <div className="d-flex align-items-center mx-auto w-50 ">
             <form className="d-flex flex-grow-1 me-3" onSubmit={handleSearch}>
               <input
                 className="form-control me-2 rounded-pill bg-light bg-opacity-75 border-0 shadow-sm"
@@ -127,22 +126,19 @@ const Header = () => {
 
           {/* Cadastro */}
           <Link
-            to="/cadastro" /* Alterado de "/login" para "/cadastro" */
-            role="button"
-            className="d-flex gap-3 justify-content-center align-items-center text-decoration-none text-light"
+            to="/cadastro"
+            className="text-light fs-4"
+            title="Cadastro"
           >
-            <i className="bi bi-person-circle fs-3"></i>
-            <div className="d-none d-md-flex flex-column m-0 w-50">
-              <span className="h6 m-0 text-dark">
-                Olá, faça seu cadastro
-              </span>{" "}
-              {/* Texto atualizado */}
-            </div>
+            <i className="bi bi-person"></i>
           </Link>
+          
         </div>
+       
       </nav>
     </header>
   );
 };
 
 export default Header;
+
