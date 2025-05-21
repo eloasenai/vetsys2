@@ -1,50 +1,140 @@
-import React from "react";
-import { Link } from "react-router";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router"; // Correto
+import gatoecachorro from "../../assets/img/gatoecachorro.png";
 
 const Header = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate(); // Substitui useHistory
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (searchTerm.trim()) {
+      navigate(`/search?q=${encodeURIComponent(searchTerm.trim())}`);
+    }
+  };
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg header">
-      <div className="container-fluid d-flex justify-content-between align-items-center">
-        {/* Logo */}
-        <Link className="navbar-brand" to="/">
-          <img
-            src="/assets/img/logo.png"
-            alt="Logo"
-            className="logo"
-            style={{ height: "40px" }}
-          />
-        </Link>
-
-        {/* Barra de pesquisa */}
-        <form className="d-flex mx-auto w-50" role="search">
-          <input
-            className="form-control me-2 rounded-pill bg-light bg-opacity-75 border-0 shadow-sm"
-            type="search"
-            placeholder="Buscar"
-            aria-label="Search"
-            style={{ backdropFilter: "blur(4px)" }}
-          />
-          <button
-            className="btn btn-outline-light rounded-pill px-4"
-            type="submit"
-          >
-            Buscar
-          </button>
-        </form>
-
-        {/* Login */}
-        <Link
-          to="/login"
-          role="button"
-          className="d-flex gap-3 justify-content-center align-items-center text-decoration-none text-light"
-        >
-          <i className="bi bi-person-circle fs-3"></i>
-          <div className="d-none d-md-flex flex-column m-0 w-50">
-            <span className="h6 m-0 text-dark">Olá, faça seu login </span>
-          </div>
-        </Link>
+    <header>
+      {/* Barra de pesquisa */}
+      <div className="search-bar">
+        <input type="text" placeholder="Pesquisar..." />
       </div>
-    </nav>
+
+      <div className="image-container" style={{ position: "relative" }}>
+        <img
+          src={gatoecachorro}
+          alt="Descrição da imagem"
+          style={{
+            marginTop: "200px",
+            marginLeft: "350px",
+            height: "250px",
+            borderRadius: "30px",
+          }}
+        />
+
+        {/* Botões acima da imagem */}
+        <div
+          style={{
+            position: "absolute",
+            top: "-40px", // Posiciona os botões acima da imagem
+            left: "50%",
+            transform: "translateX(-50%)", // Centraliza os botões horizontalmente
+            display: "flex",
+            gap: "10px", // Espaçamento entre os botões
+          }}
+        ></div>
+
+        <div
+          style={{
+            position: "absolute",
+            top: "151px",
+            right: "250px",
+            width: "150px",
+            height: "150px",
+            backgroundColor: "#ffffff",
+            borderRadius: "50%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            fontSize: "30px",
+            fontWeight: "bold",
+            color: "#8ECEF2",
+            boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
+          }}
+        >
+          20% off
+        </div>
+      </div>
+
+      <nav className="navbar navbar-expand-lg navbar-dark bg header">
+        <div className="container-fluid d-flex justify-content-between align-items-center">
+          {/* Logo */}
+          <Link className="navbar-brand" to="/">
+            <img
+              src="/assets/img/logo.png"
+              alt="Logo"
+              className="logo"
+              style={{ height: "40px" }}
+            />
+          </Link>
+
+          {/* Barra de Pesquisa */}
+          <div className="d-flex align-items-center mx-auto w-50 #">
+            <form className="d-flex flex-grow-1 me-3" onSubmit={handleSearch}>
+              <input
+                className="form-control me-2 rounded-pill bg-light bg-opacity-75 shadow-sm"
+                type="search"
+                placeholder="Buscar"
+                aria-label="Search"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                style={{
+                  backdropFilter: "blur(4px)",
+                  border: "1px solid black", // Borda preta
+                }}
+              />
+              <button
+                className="btn rounded-pill px-4"
+                type="submit"
+                style={{
+                  border: "1px solid black", // Borda preta
+                  color: "black", // Cor do texto preta para melhor contraste
+                  backgroundColor: "white", // Fundo branco para visual limpo
+                }}
+              >
+                Buscar
+              </button>
+            </form>
+
+            {/* Ícone da sacola */}
+
+            <div className="d-flex align-items-center gap-3 fs-4 text-dark">
+              <Link to="/contato" title="Contato" className="text-dark">
+                <i className="bi bi-telephone"></i>
+              </Link>
+              <Link to="/favoritos" title="Favoritos" className="text-dark">
+                <i className="bi bi-suit-heart"></i>
+              </Link>
+              <Link to="/carrinho" title="Sacola" className="text-dark">
+                <i className="bi bi-handbag"></i>
+              </Link>
+            </div>
+          </div>
+
+          {/* Cadastro */}
+          <Link
+            to="/cadastro"
+            role="button"
+            className="d-flex gap-2 align-items-center text-decoration-none text-dark"
+          >
+            <i className="bi bi-person-circle fs-4"></i>
+            <div className="d-none d-md-flex flex-column m-0">
+              <span className="h6 m-0">Olá, faça seu cadastro</span>
+            </div>
+          </Link>
+        </div>
+      </nav>
+    </header>
   );
 };
 
