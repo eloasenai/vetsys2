@@ -32,6 +32,7 @@
 .cadastro-form {
   width: 50%; /* Ajuste a largura do formulário */
 }
+
 .entrar-container {
   display: flex;
   align-items: center;
