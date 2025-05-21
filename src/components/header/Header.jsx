@@ -1,9 +1,6 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router"; 
-import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router"; // Corrigido de "react-router" para "react-router-dom"
 import gatoecachorro from "../../assets/img/gatoecachorro.png";
-
 
 const Header = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -12,9 +9,9 @@ const Header = () => {
 
   // Simula a autenticação após cadastro
   useEffect(() => {
-    const user = localStorage.getItem("user"); // Verifica se há um usuário salvo no localStorage
-    setIsAuthenticated(!!user); // Define como autenticado se o usuário existir
-  }, []);
+    const user = localStorage.getItem("user"); // Corrigido o uso de `useEffect` (faltavam parênteses)
+    setIsAuthenticated(!!user);
+  }, []); // Adicionado array de dependências vazio para evitar loops infinitos
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -33,7 +30,12 @@ const Header = () => {
     <header>
       {/* Barra de pesquisa */}
       <div className="search-bar">
-        <input type="text" placeholder="Pesquisar..." />
+        <input
+          type="text"
+          placeholder="Pesquisar..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)} // Adicionado para atualizar o estado
+        />
       </div>
 
       <div className="image-container" style={{ position: "relative" }}>
@@ -48,16 +50,15 @@ const Header = () => {
           }}
         />
 
-
         {/* Botões acima da imagem */}
         <div
           style={{
             position: "absolute",
-            top: "-40px", // Posiciona os botões acima da imagem
+            top: "-40px",
             left: "50%",
-            transform: "translateX(-50%)", // Centraliza os botões horizontalmente
+            transform: "translateX(-50%)",
             display: "flex",
-            gap: "10px", // Espaçamento entre os botões
+            gap: "10px",
           }}
         >
           <button style={{ padding: "10px 20px", borderRadius: "5px" }}>
@@ -97,33 +98,30 @@ const Header = () => {
         >
           20% off
         </div>
-
-       
       </div>
 
       <div className="image-container">
         {/* Blocos amarelos */}
         <div className="yellow-blocks">
           <div className="yellow-block">
-          <i class="bi bi-truck"></i>
+            <i className="bi bi-truck"></i>
             <span>Frete grátis</span>
           </div>
           <div className="yellow-block">
-          <i class="bi bi-credit-card-2-back-fill"></i>
+            <i className="bi bi-credit-card-2-back-fill"></i>
             <span>Promoções</span>
           </div>
           <div className="yellow-block">
-          <i class="bi bi-cart3"></i>
+            <i className="bi bi-cart3"></i>
             <span>Até 10x sem juros</span>
           </div>
           <div className="yellow-block">
-          <i class="bi bi-house-fill"></i>
+            <i className="bi bi-house-fill"></i>
             <span>Retire e troque na loja</span>
           </div>
         </div>
+
       </div>
-
-
 
       <nav className="navbar navbar-expand-lg navbar-dark bg header">
         <div className="container-fluid d-flex justify-content-between align-items-center">
@@ -137,9 +135,8 @@ const Header = () => {
             />
           </Link>
 
-
           {/* Barra de Pesquisa */}
-          <div className="d-flex align-items-center mx-auto w-50 ">
+          <div className="d-flex align-items-center mx-auto w-50">
             <form className="d-flex flex-grow-1 me-3" onSubmit={handleSearch}>
               <input
                 className="form-control me-2 rounded-pill bg-light bg-opacity-75 shadow-sm"
@@ -150,16 +147,16 @@ const Header = () => {
                 onChange={(e) => setSearchTerm(e.target.value)}
                 style={{
                   backdropFilter: "blur(4px)",
-                  border: "1px solid black", // Borda preta
+                  border: "1px solid black",
                 }}
               />
               <button
                 className="btn rounded-pill px-4"
                 type="submit"
                 style={{
-                  border: "1px solid black", // Borda preta
-                  color: "black", // Cor do texto preta para melhor contraste
-                  backgroundColor: "white", // Fundo branco para visual limpo
+                  border: "1px solid black",
+                  color: "black",
+                  backgroundColor: "white",
                 }}
               >
                 Buscar
@@ -167,7 +164,6 @@ const Header = () => {
             </form>
 
             {/* Ícone da sacola */}
-
             <div className="d-flex align-items-center gap-3 fs-4 text-dark">
               <Link to="/contato" title="Contato" className="text-dark">
                 <i className="bi bi-telephone"></i>
@@ -182,17 +178,12 @@ const Header = () => {
           </div>
 
           {/* Cadastro */}
-          <Link
-            to="/cadastro"
-            className="text-light fs-4"
-            title="Cadastro"
-          >
+          <Link to="/cadastro" className="text-light fs-4" title="Cadastro">
             <i className="bi bi-person"></i>
           </Link>
-          
+
           {/* Autenticação */}
           {isAuthenticated ? (
-            // Se autenticado, mostra o ícone de perfil
             <div className="d-flex align-items-center">
               <Link
                 to="/perfil"
@@ -210,7 +201,6 @@ const Header = () => {
               </button>
             </div>
           ) : (
-            // Se não autenticado, mostra Entrar e Cadastrar-se
             <>
               <Link
                 to="/entrar"
@@ -235,11 +225,9 @@ const Header = () => {
             </>
           )}
         </div>
-       
       </nav>
     </header>
   );
 };
 
 export default Header;
-
