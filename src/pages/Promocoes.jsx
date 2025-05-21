@@ -1,3 +1,6 @@
+import React from "react";
+
+
 const Promocoes = () => {
   return (
     <div className="container mt-5">

@@ -1,3 +1,6 @@
+import React from "react";
+
+
 const Passaros = () => {
     return (
         <div className="container mt-5">

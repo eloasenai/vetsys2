@@ -5,3 +5,5 @@ export const Gato = () => {
     <div>Gato</div>
   )
 }
+
+export default Gato
