@@ -12,8 +12,8 @@ const Cadastro = () => {
 
   const handleCadastro = (e) => {
     e.preventDefault();
-    if (nome && sobrenome && email && senha && confirmarSenha) {
-      localStorage.setItem("devcadastro", JSON.stringify({ nome, sobrenome, email, senha, confirmarSenha }));
+    if (nome && sobrenome && email && senha && confirmarsenha) {
+      localStorage.setItem("devcadastro", JSON.stringify({ nome, sobrenome, email, senha, confirmarsenha }));
       navigate("/"); // redireciona para a tela inicial
     }
   };
