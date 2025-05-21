@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router"; // Correto
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router";
 import gatoecachorro from "../../assets/img/gatoecachorro.png";
 
 const Header = () => {
@@ -7,10 +7,10 @@ const Header = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const navigate = useNavigate();
 
-  // Checa se o usuário está logado (por exemplo, após login ou cadastro)
+  // Simula a autenticação após cadastro
   useEffect(() => {
-    const user = localStorage.getItem("user");
-    setIsAuthenticated(!!user); // true se existir user
+    const user = localStorage.getItem("user"); // Verifica se há um usuário salvo no localStorage
+    setIsAuthenticated(!!user); // Define como autenticado se o usuário existir
   }, []);
 
   const handleSearch = (e) => {
@@ -18,6 +18,12 @@ const Header = () => {
     if (searchTerm.trim()) {
       navigate(`/search?q=${encodeURIComponent(searchTerm.trim())}`);
     }
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("user"); // Remove o usuário do localStorage
+    setIsAuthenticated(false); // Atualiza o estado para não autenticado
+    navigate("/"); // Redireciona para a página inicial
   };
 
   return (
@@ -144,18 +150,50 @@ const Header = () => {
             </div>
           </div>
 
-          {/* Cadastro */}
-          <Link
-            to="/cadastro"
-            role="button"
-            className="d-flex gap-2 align-items-center text-decoration-none text-dark"
-          >
-            <i className="bi bi-person-circle fs-3"></i>
-            <div className="d-none d-md-flex flex-column m-0 w-50">
-              <span className="h6 m-0 text-dark">Olá, faça seu cadastro</span>{" "}
-              {/* Texto atualizado */}
+          {/* Autenticação */}
+          {isAuthenticated ? (
+            // Se autenticado, mostra o ícone de perfil
+            <div className="d-flex align-items-center">
+              <Link
+                to="/perfil"
+                role="button"
+                className="d-flex justify-content-center align-items-center text-decoration-none text-light"
+                title="Meu perfil"
+              >
+                <i className="bi bi-person-circle fs-3"></i>
+              </Link>
+              <button
+                className="btn btn-outline-light ms-3"
+                onClick={handleLogout}
+              >
+                Sair
+              </button>
             </div>
-          </Link>
+          ) : (
+            // Se não autenticado, mostra Entrar e Cadastrar-se
+            <>
+              <Link
+                to="/entrar"
+                role="button"
+                className="d-flex gap-3 justify-content-center align-items-center text-decoration-none text-light"
+              >
+                <i className="bi bi-person-circle fs-3"></i>
+                <div className="d-none d-md-flex flex-column m-0 w-50">
+                  <span className="h6 m-0 text-dark">Entrar</span>
+                </div>
+              </Link>
+              <Link
+                to="/cadastro"
+                role="button"
+                className="d-flex gap-3 justify-content-center align-items-center text-decoration-none text-light"
+              >
+                <i className="bi bi-person-plus fs-3"></i>
+                <div className="d-none d-md-flex flex-column m-0 w-50">
+                  <span className="h6 m-0 text-dark">Cadastrar-se</span>
+                </div>
+              </Link>
+            </>
+          )}
         </div>
       </nav>
     </header>
