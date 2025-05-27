@@ -237,10 +237,10 @@ const Header = () => {
           {/* Logo */}
           <Link className="navbar-brand" to="/">
             <img
-              src="/assets/img/logo.png"
+              src="src/assets/img/logo.png"
               alt="Logo"
               className="logo"
-              style={{ height: "40px" }}
+              style={{ height: "80px" }}
             />
           </Link>
 
