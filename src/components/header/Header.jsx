@@ -27,9 +27,7 @@ const Header = () => {
 
   return (
     <header>
-
-
-<div className="d-flex justify-content-evenly gap-3 py-3 position-position-absolute">
+      <div className="d-flex justify-content-evenly gap-3 py-3 position-position-absolute">
         {["Gato", "Cachorro", "Pássaros", "Roedores", "Promoções"].map(
           (label) => (
             <Link
@@ -38,25 +36,38 @@ const Header = () => {
               className="btn"
               style={{
                 marginTop: "120px",
-                border: "1px solid black",
                 borderRadius: "15px",
-                padding: "20px 100px",
-                backgroundImage: "./assets/images/botão.png",
-                backgroundPosition: "center",
-                backgroundColor: "white",
-                textDecoration: "none",
-                color: "black",
-            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-
+                padding: "0", 
+                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)", 
+                position: "relative", // Define o contêiner como relativo
+                textAlign: "center", // Centraliza o texto
               }}
+            >
+              <img
+                src="src/assets/img/botão.png" 
+                alt={label}
+                style={{
+                  width: "300px", 
+                  height: "auto",
+                  borderRadius: "15px", // Bordas arredondadas
+                }}
+              />
+              <span
+                style={{
+                  position: "absolute", 
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%)", 
+                  color: "black", 
+                  fontSize: "20px", 
+                }}
               >
-              {label}
+                {label}
+              </span>
             </Link>
-            
           )
         )}
       </div>
-
 
       <div className="image-container" style={{ position: "relative" }}>
         <img
@@ -69,35 +80,32 @@ const Header = () => {
             borderRadius: "30px",
             boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
             width: "1750px",
-            }}
+          }}
         />
-
-
       </div>
 
-        <div
-          style={{
-            position: "absolute",
-            top: "220px",
-            right: "355px",
-            width: "150px",
-            height: "150px",
-            backgroundColor: "#ffffff",
-            borderRadius: "50%",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            fontSize: "30px",
-            fontWeight: "bold",
-            color: "#8ECEF2",
-            boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
-          }}
-        >
-          20% off
-        </div>
+      <div
+        style={{
+          position: "absolute",
+          top: "220px",
+          right: "355px",
+          width: "150px",
+          height: "150px",
+          backgroundColor: "#ffffff",
+          borderRadius: "50%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          fontSize: "30px",
+          fontWeight: "bold",
+          color: "#8ECEF2",
+          boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
+        }}
+      >
+        20% off
+      </div>
 
       <div className="image-container">
-
         {/* Blocos amarelos */}
         <div className="yellow-blocks">
           <div className="yellow-block">
@@ -126,6 +134,7 @@ const Header = () => {
               src="src/assets/img/logo.png"
               alt="Logo"
               className="logo"
+              width={50}
               style={{ height: "40px" }}
             />
           </Link>
