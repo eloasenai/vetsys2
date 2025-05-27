@@ -206,30 +206,58 @@ const Header = () => {
     className="custom-image"
     alt="Snack para Gato"
   />
+<p className="custom-image-text">R$00,00</p>
+     
   <img
     src="src/assets/img/KitPop.png"
     className="custom-image"
     alt="Kit Pop"
   />
+<p className="custom-image-text">R$00,00</p>
+      
   <img
     src="src/assets/img/ZenPet.png"
     className="custom-image"
     alt="Zen Pet"
   />
+<p className="custom-image-text">R$00,00</p>
+     
 <img
   src="src/assets/img/Caixa.png"
   className="custom-image"
  alt="Caixa"
 />
+<p className="custom-image-text">R$00,00</p>
+
 <img
   src="src/assets/img/SpecialDog.png"
   className="custom-image"
 
   alt="SpecialDog"
 />
+<p className="custom-image-text">R$00,00</p>
 </div>
 
 
+
+<button
+    onClick={() => window.open("https://wa.me/5599999999999", "_blank")}
+    style={{
+      marginTop: "60px",
+      padding: "50px 350px",
+      backgroundImage: "url('src/assets/whats.png')",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      color: "#48A771",
+      border: "none",
+      borderRadius: "20px",
+      cursor: "pointer",
+      fontSize: "36px",
+      marginLeft:"400px"
+    }}
+  >
+    Compre pelo WhatsApp
+</button>
 
       </div>
       <nav className="navbar navbar-expand-lg navbar-dark bg header">

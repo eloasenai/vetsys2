@@ -111,13 +111,26 @@
 }
 
 .custom-image-container {
-  display: flex; /* Coloca as imagens lado a lado */
-  gap: 30px; /* Espaçamento entre as imagens */
-  justify-content: center; /* Centraliza as imagens no contêiner */
+  display: flex; /* Coloca os itens lado a lado */
+  gap: 30px; /* Espaçamento entre os itens */
+  justify-content: center; /* Centraliza os itens no contêiner */
+}
+
+.custom-image-item {
+  display: flex;
+  flex-direction: column; /* Coloca a imagem e o texto em coluna */
+  align-items: center; /* Centraliza a imagem e o texto */
 }
 
 .custom-image {
   width: 250px;
   height: 250px;
   object-fit: cover; /* Ajusta a imagem ao contêiner */
+}
+
+.custom-image-text {
+  margin-top: 10px; /* Espaçamento entre a imagem e o texto */
+  font-size: 20px;
+  color: #000000; /* Cor do texto */
+  margin-top: 300px;
 }
