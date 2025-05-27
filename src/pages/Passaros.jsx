@@ -1,11 +1,12 @@
 import React from "react";
 
-
 const Passaros = () => {
-    return (
-        <div className="container mt-5">
-        <h2 className="mb-4">Passaros</h2>
-        </div>
-    )
-}
+  return (
+    <div style={{ padding: "20px" }}>
+      <h1>Página de Pássaros</h1>
+      <p>Informações sobre pássaros.</p>
+    </div>
+  );
+};
+
 export default Passaros;
