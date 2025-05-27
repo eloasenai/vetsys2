@@ -98,7 +98,7 @@ const Header = () => {
           20% off
         </div>
       </div>
-      -------------------
+      {/* separando codigos */}
       <div className="d-flex justify-content-evenly gap-3 py-3">
         {["Gato", "Cachorro", "Pássaros", "Roedores", "Promoções"].map(
           (label) => (
@@ -123,7 +123,7 @@ const Header = () => {
           )
         )}
       </div>
-      ------------------
+     {/* separando os codigos  */}
       <div className="image-container">
         {/* Blocos amarelos */}
         <div className="yellow-blocks">
