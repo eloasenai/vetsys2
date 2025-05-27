@@ -9,6 +9,7 @@ import Cachorro from "./pages/Cachorro";
 import Passaros from "./pages/Passaros.jsx";
 import Roedores from "./pages/Roedores";
 import Promocoes from "./pages/Promocoes";
+import Footer from "./components/footer/Footer";
 
 const AppWrapper = () => {
   const location = useLocation();
