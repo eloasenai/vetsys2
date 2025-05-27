@@ -1,21 +1,18 @@
 import React, { useState } from "react";
 
+
 const Gato = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearch = (e) => {
     e.preventDefault();
-    // Ação ao pesquisar (ex: redirecionar ou filtrar)
     console.log("Buscando por:", searchTerm);
   };
 
   return (
-<nav className="navbar navbar-expand-lg navbar-dark bg header">
-<div className="container-fluid d-flex justify-content-between align-items-center">
-  
-   
-      {/* Barra laranja com campo de pesquisa */}
-      <div
+    <>
+      <nav
+        className="navbar navbar-expand-lg navbar-dark bg header"
         style={{
           width: "100%",
           height: "95px",
@@ -26,39 +23,53 @@ const Gato = () => {
           zIndex: 1000,
           display: "flex",
           alignItems: "center",
-          justifyContent: "center",
+          justifyContent: "space-between",
+          padding: "0 20px",
         }}
-        >
-        <div  className="d-flex align-items-center mx-auto w-50">
-        <form className="d-flex flex-grow-1 me-3" onSubmit={handleSearch}>
-        <input
-                className="form-control me-2 rounded-pill shadow-sm"
-                type="search"
-                placeholder="Buscar"
-                aria-label="Search"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                style={{
-                  backgroundColor: "#0000001c",
-                  border: "1px solid black", // Borda preta
-                }}
-                />
-          <button
-                className="btn rounded-pill px-4"
-                type="submit"
-                style={{
-                  border: "1px solid black",
-                  color: "black",
-                  backgroundColor: "white",
-                }}
-                >
-                Buscar
-              </button>
-        </form>
+      >
+        <img
+          src="/assets/img/logo.png"
+          alt="Logo"
+          style={{ height: "70px", cursor: "pointer" }}
+        />
+
+        <div className="d-flex align-items-center mx-auto w-50">
+          <form className="d-flex flex-grow-1 me-3" onSubmit={handleSearch}>
+            <input
+              className="form-control me-2 rounded-pill shadow-sm"
+              type="search"
+              placeholder="O que seu pet precisa?"
+              aria-label="Search"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              style={{
+                backgroundColor: "#0000001c",
+                border: "1px solid black",
+              }}
+            />
+            <button
+              className="btn rounded-pill px-4"
+              type="submit"
+              style={{
+                border: "1px solid black",
+                color: "black",
+                backgroundColor: "white",
+              }}
+            >
+              Buscar
+            </button>
+          </form>
         </div>
+      </nav>
+
+      <div style={{ marginTop: "120px", textAlign: "center" }}>
+        <img
+          src="gatoImg"
+          alt="Gato"
+          style={{ maxWidth: "100%", height: "auto" }}
+        />
       </div>
-    </div>
-    </nav>
+    </>
   );
 };
 

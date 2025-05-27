@@ -163,7 +163,7 @@ const Header = () => {
               <input
                 className="form-control me-2 rounded-pill shadow-sm"
                 type="search"
-                placeholder="Buscar"
+                placeholder="O que seu pet precisa?"
                 aria-label="Search"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
