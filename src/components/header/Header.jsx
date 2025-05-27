@@ -144,6 +144,93 @@ const Header = () => {
             <span>Retire e troque na loja</span>
           </div>
         </div>
+
+        <p className="" style={{fontSize:"30px", fontWeight:"bold", color: " black", marginLeft:"150px", marginTop:"90px"}}
+        >Produtos para cachorro</p>
+ <div className="new-image-container">
+  <img
+    src="src/assets/img/RacaoCachorro.png"
+    alt="Nova Imagem"
+  />
+  <img
+    src="src/assets/img/BrinquedosCachorro.png"
+    alt="Nova Imagem"
+  />
+  <img
+    src="src/assets/img/PetiscosCachorro.png"
+    alt="Nova Imagem"
+  />
+  <img
+    src="src/assets/img/ColeirCachorro.png"
+    alt="Nova Imagem" 
+  />
+  <img
+    src="src/assets/img/FarmaciaCachorro.png"
+    alt="Nova Imagem"
+   
+  />
+</div>
+
+<p className="" style={{fontSize:"30px", fontWeight:"bold", color: " black", marginLeft:"150px", marginTop:"90px"}}
+        >Produtos para gato</p>
+<div className="new-image-container">
+  <img
+    src="src/assets/img/RacaoGato.png"
+    alt="Nova Imagem"
+  />
+  <img
+    src="src/assets/img/Areia.png"
+    alt="Nova Imagem"
+  />
+  <img
+    src="src/assets/img/Petiscogato.png"
+    alt="Nova Imagem"
+  />
+  <img
+    src="src/assets/img/Arranhador.png"
+    alt="Nova Imagem" 
+  />
+  <img
+    src="src/assets/img/FarmaciaGato.png"
+    alt="Nova Imagem"
+   
+  />
+</div>
+
+<p className="" style={{fontSize:"70px", marginTop:"90px", color:"#CBB883", textAlign:"center"}}
+        >Nossa Linha</p>
+
+<div className="custom-image-container">
+  <img
+    src="src/assets/img/SnackGato.png"
+    className="custom-image"
+    alt="Snack para Gato"
+  />
+  <img
+    src="src/assets/img/KitPop.png"
+    className="custom-image"
+    alt="Kit Pop"
+  />
+  <img
+    src="src/assets/img/ZenPet.png"
+    className="custom-image"
+    alt="Zen Pet"
+  />
+<img
+  src="src/assets/img/Caixa.png"
+  className="custom-image"
+ alt="Caixa"
+/>
+<img
+  src="src/assets/img/SpecialDog.png"
+  className="custom-image"
+
+  alt="SpecialDog"
+/>
+</div>
+
+
+
       </div>
       <nav className="navbar navbar-expand-lg navbar-dark bg header">
         <div className="container-fluid d-flex justify-content-between align-items-center">

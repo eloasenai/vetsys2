@@ -93,3 +93,31 @@
   width: 50%; /* Ajuste a largura do formulário */
 }
 
+
+
+.new-image-container {
+  display: flex; /* Coloca os elementos lado a lado */
+  gap: 70px; /* Espaçamento entre as imagens */
+  margin-top: 100px;
+  margin-left: 150px;
+ 
+}
+
+.new-image-container img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%; /* Torna as imagens redondas */
+  object-fit: cover; /* Garante que a imagem se ajuste ao contêiner */
+}
+
+.custom-image-container {
+  display: flex; /* Coloca as imagens lado a lado */
+  gap: 30px; /* Espaçamento entre as imagens */
+  justify-content: center; /* Centraliza as imagens no contêiner */
+}
+
+.custom-image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover; /* Ajusta a imagem ao contêiner */
+}
