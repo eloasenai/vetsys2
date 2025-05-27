@@ -30,7 +30,7 @@ const Gato = () => {
         <img
           src="src/assets/img/logo.png"
           alt="Logo"
-          style={{ height: "70px", cursor: "pointer" }}
+          style={{ height: "80px", cursor: "pointer" }}
         />
 
         <div className="d-flex align-items-center mx-auto w-50">
@@ -88,47 +88,90 @@ const Gato = () => {
             fontFamily: "Yeseva One",
             fontSize: "70px",
             marginBottom: "20px", // Espaçamento entre o título e as imagens
+            marginRight:"1300px", 
 
           }}
         >
           RAÇÃO
         </h1>
 
-        {/* Imagens das rações */}
+        {/* Imagens das rações com descrição */}
         <div
           style={{
             display: "flex",
             flexWrap: "wrap", // Permite que as imagens quebrem para a próxima linha
             gap: "20px", // Espaçamento entre os quadrados
-            marginLeft:"90px", // Margem esquerda para centralizar os quadrados
+            justifyContent: "center", // Centraliza os quadrados
           }}
         >
-          {/* Cada imagem dentro de um quadrado branco */}
-          {["raçãogato1.png", "raçãogato2.png", "raçãogato3.png", "raçãogato4.png"].map(
-            (src, index) => (
-              <div
-                key={index}
-                style={{
-                  width: "220px",
-                  height: "220px",
-                  backgroundColor: "white",
-                  borderRadius: "10px",
-                  boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Sombra para destacar o quadrado
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  borderColor: "black",
-                }}
-              >
-                <img
-                  src={`src/assets/img/gato.img/${src}`}
-                  alt={`Ração ${index + 1}`}
-                  style={{ width: "180px", height: "auto", borderRadius: "5px" }}
-                />
+          {/* Cada imagem dentro de um quadrado branco com descrição */}
+          {[
+            {
+              src: "raçãogato1.png",
+              nome: "Ração Premium",
+              ingredientes: "Frango, abóbora e alecrim",
+              tamanho: "10,1kg",
+              idade: "Adulto",
+            },
+            {
+              src: "raçãogato2.png",
+              nome: "Ração Super Premium",
+              ingredientes:"Carne bovina, vegetais, sem conservantes",
+              tamanho: "10,1kg",
+              idade: "Filhote",
+            },
+            {
+              src: "raçãogato3.png",
+              nome: "Ração Light",
+              ingredientes:"Salmão, batata doce, ômega 3" ,
+              tamanho: "10,1kg",
+              idade: "Adulto",
+            },
+            {
+              src: "raçãogato4.png",
+              nome: "Ração Natural",
+              ingredientes:"Frango, fibras, baixo teor de gordura" ,
+              tamanho: "10,1kg",
+              idade: "Sênior",
+            },
+          ].map((item, index) => (
+            <div
+              key={index}
+              style={{
+                width: "320px",
+                height: "400px", // Ajusta a altura para incluir a descrição
+                backgroundColor: "white",
+                borderRadius: "10px",
+                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Sombra para destacar o quadrado
+                display: "flex",
+                flexDirection: "column", // Alinha imagem e descrição verticalmente
+                alignItems: "center",
+                justifyContent: "center",
+                padding: "10px",
+              }}
+            >
+              <img
+                src={`src/assets/img/gato.img/${item.src}`}
+                alt={item.nome}
+                style={{ width: "280px", height: "auto", borderRadius: "5px" }}
+              />
+              {/* Descrição abaixo da imagem */}
+              <div style={{ textAlign: "center", marginTop: "10px" }}>
+                <h3 style={{ fontSize: "18px", margin: "5px 0" }}>{item.nome}</h3>
+                <p style={{ fontSize: "14px", margin: "5px 0" }}>
+                  <strong>Ingredientes:</strong> {item.ingredientes}
+                </p>
+                <p style={{ fontSize: "14px", margin: "5px 0" }}>
+                  <strong>Tamanho:</strong> {item.tamanho}
+                </p>
+                <p style={{ fontSize: "14px", margin: "5px 0" }}>
+                  <strong>Idade:</strong> {item.idade}
+                </p>
               </div>
-            )
-          )}
+            </div>
+          ))}
         </div>
+
       </div>
     </>
   );
