@@ -50,7 +50,6 @@ const Header = () => {
           }}
         />
 
-      
         {/* Botões acima da imagem */}
         <div
           style={{
@@ -121,7 +120,6 @@ const Header = () => {
             <span>Retire e troque na loja</span>
           </div>
         </div>
-
       </div>
 
       <nav className="navbar navbar-expand-lg navbar-dark bg header">
@@ -140,7 +138,6 @@ const Header = () => {
           <div className="d-flex align-items-center mx-auto w-50">
             <form className="d-flex flex-grow-1 me-3" onSubmit={handleSearch}>
               <input
-            
                 className="form-control me-2 rounded-pill shadow-sm"
                 type="search"
                 placeholder="Buscar"
@@ -148,7 +145,7 @@ const Header = () => {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 style={{
-                backgroundColor:"#0000001c",
+                  backgroundColor: "#0000001c",
                   border: "1px solid black", // Borda preta
                 }}
               />
