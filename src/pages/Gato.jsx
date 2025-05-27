@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
-export const Gato = () => {
-  return (
-    <div>Gato</div>
-  )
-}
+const Gato = () => {
+  return <div></div>; 
+};
 
-export default Gato
+export default Gato;

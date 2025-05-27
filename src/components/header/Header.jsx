@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router"; // Corrigido de "react-router" para "react-router-dom"
+import { Link, useNavigate } from "react-router";
 import gatoecachorro from "../../assets/img/gatoecachorro.png";
 
 const Header = () => {
@@ -7,7 +7,6 @@ const Header = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const navigate = useNavigate();
 
-  // Simula a autenticação após cadastro
   useEffect(() => {
     const user = localStorage.getItem("user"); // Corrigido o uso de `useEffect` (faltavam parênteses)
     setIsAuthenticated(!!user);
@@ -28,60 +27,59 @@ const Header = () => {
 
   return (
     <header>
-      {/* Barra de pesquisa */}
-      {/* <div className="search-bar">
-        <input
-          type="text"
-          placeholder="Pesquisar..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)} // Adicionado para atualizar o estado
-        />
-      </div> */}
+
+
+<div className="d-flex justify-content-evenly gap-3 py-3 position-position-absolute">
+        {["Gato", "Cachorro", "Pássaros", "Roedores", "Promoções"].map(
+          (label) => (
+            <Link
+              key={label}
+              to={`/${label.toLowerCase()}`}
+              className="btn"
+              style={{
+                marginTop: "120px",
+                border: "1px solid black",
+                borderRadius: "15px",
+                padding: "20px 100px",
+                backgroundImage: "./assets/images/botão.png",
+                backgroundPosition: "center",
+                backgroundColor: "white",
+                textDecoration: "none",
+                color: "black",
+            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+
+              }}
+              >
+              {label}
+            </Link>
+            
+          )
+        )}
+      </div>
+
+
       <div className="image-container" style={{ position: "relative" }}>
         <img
           src={gatoecachorro}
           alt="Descrição da imagem"
           style={{
-            marginTop: "200px",
+            marginTop: "50px",
             marginLeft: "350px",
-            height: "250px",
+            height: "300px",
             borderRadius: "30px",
-          }}
+            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+            width: "1750px",
+            }}
         />
 
-        {/* Botões acima da imagem */}
-        <div
-          style={{
-            position: "absolute",
-            top: "-40px",
-            left: "50%",
-            transform: "translateX(-50%)",
-            display: "flex",
-            gap: "10px",
-          }}
-        >
-          <button style={{ padding: "10px 20px", borderRadius: "5px" }}>
-            Botão 1
-          </button>
-          <button style={{ padding: "10px 20px", borderRadius: "5px" }}>
-            Botão 2
-          </button>
-          <button style={{ padding: "10px 20px", borderRadius: "5px" }}>
-            Botão 3
-          </button>
-          <button style={{ padding: "10px 20px", borderRadius: "5px" }}>
-            Botão 4
-          </button>
-          <button style={{ padding: "10px 20px", borderRadius: "5px" }}>
-            Botão 5
-          </button>
-        </div>
+
+      </div>
 
         <div
           style={{
             position: "absolute",
-            top: "151px",
-            right: "250px",
+            top: "220px",
+            right: "355px",
             width: "150px",
             height: "150px",
             backgroundColor: "#ffffff",
@@ -97,34 +95,9 @@ const Header = () => {
         >
           20% off
         </div>
-      </div>
-      -------------------
-      <div className="d-flex justify-content-evenly gap-3 py-3">
-        {["Gato", "Cachorro", "Pássaros", "Roedores", "Promoções"].map(
-          (label) => (
-            <Link
-              key={label}
-              to={`/${label.toLowerCase()}`}
-              className="btn"
-              style={{
-                border: "1px solid black",
-                borderRadius: "15px",
-                padding: "20px 60px",
-                backgroundImage: "./assets/images/botão.png",
-                backgroundPosition: "center",
-                backgroundColor: "white",
-                margin: "0 10px",
-                textDecoration: "none",
-                color: "black",
-              }}
-            >
-              {label}
-            </Link>
-          )
-        )}
-      </div>
-      ------------------
+
       <div className="image-container">
+
         {/* Blocos amarelos */}
         <div className="yellow-blocks">
           <div className="yellow-block">
