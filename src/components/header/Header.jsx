@@ -29,15 +29,14 @@ const Header = () => {
   return (
     <header>
       {/* Barra de pesquisa */}
-      <div className="search-bar">
+      {/* <div className="search-bar">
         <input
           type="text"
           placeholder="Pesquisar..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)} // Adicionado para atualizar o estado
         />
-      </div>
-
+      </div> */}
       <div className="image-container" style={{ position: "relative" }}>
         <img
           src={gatoecachorro}
@@ -99,7 +98,32 @@ const Header = () => {
           20% off
         </div>
       </div>
-
+      -------------------
+      <div className="d-flex justify-content-evenly gap-3 py-3">
+        {["Gato", "Cachorro", "Pássaros", "Roedores", "Promoções"].map(
+          (label) => (
+            <Link
+              key={label}
+              to={`/${label.toLowerCase()}`}
+              className="btn"
+              style={{
+                border: "1px solid black",
+                borderRadius: "15px",
+                padding: "20px 60px",
+                backgroundImage: "./assets/images/botão.png",
+                backgroundPosition: "center",
+                backgroundColor: "white",
+                margin: "0 10px",
+                textDecoration: "none",
+                color: "black",
+              }}
+            >
+              {label}
+            </Link>
+          )
+        )}
+      </div>
+      ------------------
       <div className="image-container">
         {/* Blocos amarelos */}
         <div className="yellow-blocks">
@@ -121,7 +145,6 @@ const Header = () => {
           </div>
         </div>
       </div>
-
       <nav className="navbar navbar-expand-lg navbar-dark bg header">
         <div className="container-fluid d-flex justify-content-between align-items-center">
           {/* Logo */}
@@ -177,9 +200,11 @@ const Header = () => {
           </div>
 
           {/* Cadastro */}
-          <Link to="/cadastro" className="text-light fs-4" title="Cadastro">
-            <i className="bi bi-person"></i>
-          </Link>
+          <Link
+            to="/cadastro"
+            className="text-light fs-4"
+            title="Cadastro"
+          ></Link>
 
           {/* Autenticação */}
           {isAuthenticated ? (
@@ -189,9 +214,7 @@ const Header = () => {
                 role="button"
                 className="d-flex justify-content-center align-items-center text-decoration-none text-light"
                 title="Meu perfil"
-              >
-                <i className="bi bi-person-circle fs-3"></i>
-              </Link>
+              ></Link>
               <button
                 className="btn btn-outline-light ms-3"
                 onClick={handleLogout}
@@ -206,7 +229,7 @@ const Header = () => {
                 role="button"
                 className="d-flex gap-3 justify-content-center align-items-center text-decoration-none text-light"
               >
-                <i className="bi bi-person-circle fs-3"></i>
+                <i className="bi bi-person-circle fs-3 text-dark"></i>
                 <div className="d-none d-md-flex flex-column m-0 w-50">
                   <span className="h6 m-0 text-dark">Entrar</span>
                 </div>
@@ -216,8 +239,7 @@ const Header = () => {
                 role="button"
                 className="d-flex gap-3 justify-content-center align-items-center text-decoration-none text-light"
               >
-                <i className="bi bi-person-plus fs-3"></i>
-                <div className="d-none d-md-flex flex-column m-0 w-50">
+                <div className="d-none d-md-flex flex-column m-5 w-50">
                   <span className="h6 m-0 text-dark">Cadastrar-se</span>
                 </div>
               </Link>
