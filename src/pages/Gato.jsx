@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-
 const Gato = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -11,6 +10,7 @@ const Gato = () => {
 
   return (
     <>
+      {/* Navbar */}
       <nav
         className="navbar navbar-expand-lg navbar-dark bg header"
         style={{
@@ -28,7 +28,7 @@ const Gato = () => {
         }}
       >
         <img
-          src="/assets/img/logo.png"
+          src="src/assets/img/logo.png"
           alt="Logo"
           style={{ height: "70px", cursor: "pointer" }}
         />
@@ -62,12 +62,73 @@ const Gato = () => {
         </div>
       </nav>
 
-      <div style={{ marginTop: "120px", textAlign: "center" }}>
+      {/* Imagem do gato */}
+      <div style={{marginTop: "90px", textAlign: "center"}}>
         <img
-          src="gatoImg"
+          src="src/assets/img/gato.img/Gato.png" // Substitua pelo caminho correto da imagem do gato
           alt="Gato"
-          style={{ maxWidth: "100%", height: "auto" }}
+          style={{width:"2037px", height: "600px",marginLeft:"" }}
         />
+      </div>
+
+      {/* Imagens de ração de gato */}
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column", // Alinha os elementos verticalmente
+          alignItems: "center", // Centraliza os elementos horizontalmente
+          marginTop: "20px",
+          padding: "20px",
+        }}
+      >
+        {/* Título "RAÇÃO" */}
+        <h1
+          style={{
+            color: "#FFBD00",
+            fontFamily: "Yeseva One",
+            fontSize: "70px",
+            marginBottom: "20px", // Espaçamento entre o título e as imagens
+
+          }}
+        >
+          RAÇÃO
+        </h1>
+
+        {/* Imagens das rações */}
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap", // Permite que as imagens quebrem para a próxima linha
+            gap: "20px", // Espaçamento entre os quadrados
+            marginLeft:"90px", // Margem esquerda para centralizar os quadrados
+          }}
+        >
+          {/* Cada imagem dentro de um quadrado branco */}
+          {["raçãogato1.png", "raçãogato2.png", "raçãogato3.png", "raçãogato4.png"].map(
+            (src, index) => (
+              <div
+                key={index}
+                style={{
+                  width: "220px",
+                  height: "220px",
+                  backgroundColor: "white",
+                  borderRadius: "10px",
+                  boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Sombra para destacar o quadrado
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  borderColor: "black",
+                }}
+              >
+                <img
+                  src={`src/assets/img/gato.img/${src}`}
+                  alt={`Ração ${index + 1}`}
+                  style={{ width: "180px", height: "auto", borderRadius: "5px" }}
+                />
+              </div>
+            )
+          )}
+        </div>
       </div>
     </>
   );
