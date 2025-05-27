@@ -9,6 +9,7 @@
 
 .navbar .d-flex {
   z-index: 1; /* Garante que o link esteja acima de outros elementos */
+  
 }
 .cadastro-container {
   display: flex;
@@ -26,7 +27,7 @@
  width: 800px; /* Ajuste o tamanho da imagem */
   height: auto;
   margin: 0%;
-  margin-left:0%;
+  margin-left:-20%;
 }
 
 .cadastro-form {
