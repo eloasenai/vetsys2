@@ -75,11 +75,11 @@ const Header = () => {
           alt="Descrição da imagem"
           style={{
             marginTop: "50px",
-            marginLeft: "350px",
+            marginLeft: "250px",
             height: "300px",
             borderRadius: "30px",
             boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-            width: "1750px",
+            width: "1500px",
           }}
         />
       </div>
@@ -87,8 +87,8 @@ const Header = () => {
       <div
         style={{
           position: "absolute",
-          top: "220px",
-          right: "355px",
+          top: "27%",
+          right: "11%",
           width: "150px",
           height: "150px",
           backgroundColor: "#ffffff",
@@ -288,8 +288,8 @@ const Header = () => {
               src="src/assets/img/logo.png"
               alt="Logo"
               className="logo"
-              width={50}
-              style={{ height: "40px" }}
+              width={95}
+              style={{ height: "95px" }}
             />
           </Link>
 

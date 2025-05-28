@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 const Gato = () => {
   const [searchTerm, setSearchTerm] = useState("");
+
+  const scrollRef = useRef(null);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -30,7 +32,7 @@ const Gato = () => {
         <img
           src="src/assets/img/logo.png"
           alt="Logo"
-          style={{ height: "80px", cursor: "pointer" }}
+          style={{ height: "95px", cursor: "pointer", width: "95px" }}
         />
 
         <div className="d-flex align-items-center mx-auto w-50">
@@ -71,7 +73,7 @@ const Gato = () => {
         />
       </div>
 
-      {/* Imagens de ração de gato */}
+      {/* RAÇÃO */}
       <div
         style={{
           display: "flex",
@@ -81,7 +83,6 @@ const Gato = () => {
           padding: "20px",
         }}
       >
-        {/* Título "RAÇÃO" */}
         <h1
           style={{
             color: "#FFBD00",
@@ -91,7 +92,7 @@ const Gato = () => {
             marginRight: "1300px",
           }}
         >
-          RAÇÃO
+          RAÇÃO:
         </h1>
 
         {/* Imagens das rações */}
@@ -103,7 +104,6 @@ const Gato = () => {
             justifyContent: "center",
           }}
         >
-          {/* Cada imagem dentro de um quadrado branco */}
           {[
             {
               src: "raçãogato1.png",
@@ -111,6 +111,7 @@ const Gato = () => {
               ingredientes: "Frango, abóbora e alecrim",
               tamanho: "10,1kg",
               idade: "Adulto",
+              preco: "R$ 99,90",
             },
             {
               src: "raçãogato2.png",
@@ -118,6 +119,7 @@ const Gato = () => {
               ingredientes: "Carne bovina, vegetais, sem conservantes",
               tamanho: "10,1kg",
               idade: "Filhote",
+              preco: "R$ 129,90",
             },
             {
               src: "raçãogato3.png",
@@ -125,6 +127,7 @@ const Gato = () => {
               ingredientes: "Salmão, batata doce, ômega 3",
               tamanho: "10,1kg",
               idade: "Adulto",
+              preco: "R$ 89,90",
             },
             {
               src: "raçãogato4.png",
@@ -132,6 +135,7 @@ const Gato = () => {
               ingredientes: "Frango, fibras, baixo teor de gordura",
               tamanho: "10,1kg",
               idade: "Sênior",
+              preco: "R$ 109,90",
             },
             {
               src: "raçãogato5.png",
@@ -139,171 +143,34 @@ const Gato = () => {
               ingredientes: "Atum, Salmão e camarão",
               tamanho: "1kg",
               idade: "Adulto",
+              preco: "R$ 29,90",
             },
           ].map((item, index) => (
             <div
               key={index}
               style={{
                 width: "320px",
-                height: "320px",
                 backgroundColor: "white",
                 borderRadius: "10px",
                 boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
                 display: "flex",
+                flexDirection: "column",
                 alignItems: "center",
-                justifyContent: "center",
-                padding: "10px",
+                padding: "15px",
               }}
             >
               <img
                 src={`src/assets/img/gato.img/${item.src}`}
                 alt={item.nome}
                 style={{
-                  width: "280px", // Define largura fixa
-                  height: "280px", // Define altura fixa
-                  objectFit: "cover", // Garante que a imagem seja ajustada sem distorção
+                  width: "280px",
+                  height: "280px",
+                  objectFit: "cover",
                   borderRadius: "5px",
+                  marginBottom: "10px",
                 }}
               />
-            </div>
-          ))}
-        </div>
-
-        {/* Título "PETISCO" */}
-        <h1
-          style={{
-            color: "#FFBD00",
-            fontFamily: "Yeseva One",
-            fontSize: "70px",
-            marginBottom: "20px",
-            marginRight: "1300px",
-          }}
-        >
-          PETISCO
-        </h1>
-
-        {/* Imagens dos petiscos */}
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "20px",
-            justifyContent: "center",
-          }}
-        >
-          {[
-            {
-              src: "petiscogato1.png",
-              nome: "whiskas",
-              sabor: "Frango",
-              tamanho: "500g",
-            },
-            {
-              src: "petiscogato2.png",
-              nome: "Friskies",
-              sabor: "Carne bovina",
-              tamanho: "300g",
-            },
-            {
-              src: "petiscogato3.png",
-              nome: "Cat Licious",
-              sabor: "Salmão",
-              tamanho: "400g",
-            },
-            {
-              src: "petiscogato4.png",
-              nome: "Dreamies",
-              sabor: "Vegetais",
-              tamanho: "350g",
-            },
-            {
-              src: "petiscogato5.png",
-              nome: "",  
-              sabor: "Atum",
-              tamanho: "600g",
-
-            }
-          ].map((item, index) => (
-            <div
-              key={index}
-              style={{
-                width: "320px",
-                height: "320px",
-                backgroundColor: "white",
-                borderRadius: "10px",
-                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                padding: "10px",
-              }}
-            >
-              <img
-                src={`src/assets/img/gato.img/${item.src}`}
-                alt={item.nome}
-                style={{
-                  width: "280px", // Define largura fixa
-                  height: "280px", // Define altura fixa
-                  objectFit: "cover", // Garante que a imagem seja ajustada sem distorção
-                  borderRadius: "5px",
-                }}
-              />
-            </div>
-          ))}
-        </div>
-
-        {/* Descrição abaixo das imagens */}
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "20px",
-            justifyContent: "center",
-            marginTop: "20px",
-          }}
-        >
-          {[
-            {
-              preço: "R$ 99,90",
-              nome: "Ração Premium",
-              ingredientes: "Frango, abóbora e alecrim",
-              tamanho: "10,1kg",
-              idade: "Adulto",
-            },
-            {
-              preço: "R$ 129,90",
-              nome: "Ração Super Premium",
-              ingredientes: "Carne bovina, vegetais, sem conservantes",
-              tamanho: "10,1kg",
-              idade: "Filhote",
-            },
-            {
-              preço: "R$ 89,90",
-              nome: "Ração Light",
-              ingredientes: "Salmão, batata doce, ômega 3",
-              tamanho: "10,1kg",
-              idade: "Adulto",
-            },
-            {
-              preço: "R$ 109,90",
-              nome: "Ração Natural",
-              ingredientes: "Frango, fibras, baixo teor de gordura",
-              tamanho: "10,1kg",
-              idade: "Sênior",
-            },
-          ].map((item, index) => (
-            <div
-              key={index}
-              style={{
-                textAlign: "center",
-                width: "320px",
-                fontFamily: "Itim, cursive",
-              }}
-            >
               <h3 style={{ fontSize: "18px", margin: "5px 0" }}>{item.nome}</h3>
-              <p style={{ fontSize: "14px", margin: "5px 0" }}>
-                <strong>Preço:</strong> {item.preço}
-              </p>
               <p style={{ fontSize: "14px", margin: "5px 0" }}>
                 <strong>Ingredientes:</strong> {item.ingredientes}
               </p>
@@ -313,8 +180,117 @@ const Gato = () => {
               <p style={{ fontSize: "14px", margin: "5px 0" }}>
                 <strong>Idade:</strong> {item.idade}
               </p>
+              <p style={{ fontSize: "14px", margin: "5px 0", color: "#FF0000" }}>
+                <strong>Preço:</strong> {item.preco}
+              </p>
             </div>
           ))}
+        </div>
+
+        {/* PETISCO */}
+        <h1
+          style={{
+            color: "#FFBD00",
+            fontFamily: "Yeseva One",
+            fontSize: "70px",
+            marginBottom: "20px",
+            marginRight: "1300px",
+            marginTop: "250px",
+          }}
+        >
+          PETISCO:
+        </h1>
+
+        {/* Petiscos com rolagem horizontal */}
+        <div
+          style={{
+            overflowX: "auto",
+            whiteSpace: "nowrap",
+            width: "100%",
+            paddingBottom: "40px",
+          }}
+        >
+          <div
+            style={{
+              display: "inline-flex",
+              gap: "20px",
+              padding: "20px",
+            }}
+          >
+            {[
+              {
+                src: "petiscogato1.png",
+                nome: "Whiskas",
+                sabor: "Frango",
+                tamanho: "500g",
+                preco: "R$ 15,90",
+              },
+              {
+                src: "petiscogato2.png",
+                nome: "Friskies",
+                sabor: "Carne bovina",
+                tamanho: "300g",
+                preco: "R$ 13,50",
+              },
+              {
+                src: "petiscogato3.png",
+                nome: "Cat Licious",
+                sabor: "Salmão",
+                tamanho: "400g",
+                preco: "R$ 16,90",
+              },
+              {
+                src: "petiscogato4.png",
+                nome: "Dreamies",
+                sabor: "Vegetais",
+                tamanho: "350g",
+                preco: "R$ 14,20",
+              },
+              {
+                src: "petiscogato5.png",
+                nome: "Pet Pop",
+                sabor: "Atum",
+                tamanho: "600g",
+                preco: "R$ 17,90",
+              },
+            ].map((item, index) => (
+              <div
+                key={index}
+                style={{
+                  width: "320px",
+                  backgroundColor: "white",
+                  borderRadius: "10px",
+                  boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  padding: "15px",
+                }}
+              >
+                <img
+                  src={`src/assets/img/gato.img/${item.src}`}
+                  alt={item.nome}
+                  style={{
+                    width: "280px",
+                    height: "280px",
+                    objectFit: "cover",
+                    borderRadius: "5px",
+                    marginBottom: "10px",
+                  }}
+                />
+                <h3 style={{ fontSize: "18px", margin: "5px 0" }}>{item.nome}</h3>
+                <p style={{ fontSize: "14px", margin: "5px 0" }}>
+                  <strong>Sabor:</strong> {item.sabor}
+                </p>
+                <p style={{ fontSize: "14px", margin: "5px 0" }}>
+                  <strong>Tamanho:</strong> {item.tamanho}
+                </p>
+                <p style={{ fontSize: "14px", margin: "5px 0", color: "#FF0000" }}>
+                  <strong>Preço:</strong> {item.preco}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </>
