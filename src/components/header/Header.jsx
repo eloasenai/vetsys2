@@ -105,7 +105,8 @@ const Header = () => {
         20% off
       </div>
 
-      <div className="image-container">
+      <div 
+      className="image-container">
         {/* Blocos amarelos */}
         <div className="yellow-blocks">
           <div className="yellow-block">
@@ -125,10 +126,28 @@ const Header = () => {
             <span>Retire e troque na loja</span>
           </div>
         </div>
+{/* --------------------- */}
+        <p className="" 
+        style={{
+          fontSize:"30px",
+           fontWeight:"bold", 
+           color: " black", 
+           marginLeft:"150px", 
+           marginTop:"90px"
+          }}
 
-        <p className="" style={{fontSize:"30px", fontWeight:"bold", color: " black", marginLeft:"150px", marginTop:"90px"}}
         >Produtos para cachorro</p>
- <div className="new-image-container">
+
+ <div className="new-image-container"
+  style={{
+    display: "flex",
+    justifyContent: "center",
+    gap: "50px",
+    flexWrap: "wrap",
+    marginTop: "20px",
+  }}
+  >
+    {/* -------------------------- */}
   <img
     src="src/assets/img/RacaoCachorro.png"
     alt="Nova Imagem"
@@ -151,10 +170,27 @@ const Header = () => {
    
   />
 </div>
+<p className="" 
+        style={{
+          fontSize:"30px",
+           fontWeight:"bold", 
+           color: " black", 
+           marginLeft:"150px", 
+           marginTop:"90px"
+          }}
 
-<p className="" style={{fontSize:"30px", fontWeight:"bold", color: " black", marginLeft:"150px", marginTop:"90px"}}
-        >Produtos para gato</p>
-<div className="new-image-container">
+        >Produtos para cachorro</p>
+
+ <div className="new-image-container"
+  style={{
+    display: "flex",
+    justifyContent: "center",
+    gap: "50px",
+    flexWrap: "wrap",
+    marginTop: "20px",
+  }}
+  >
+    {/* -------------------------- */}
   <img
     src="src/assets/img/RacaoGato.png"
     alt="Nova Imagem"
@@ -219,26 +255,29 @@ const Header = () => {
 <p className="custom-image-text">R$00,00</p>
 </div>
 
-
-
-<button
+<div
+  style={{
+    display: "flex",
+    justifyContent: "center", 
+    marginTop: "60px", 
+  }}
+>
+  <button
     onClick={() => window.open("https://wa.me/5599999999999", "_blank")}
     style={{
-      marginTop: "60px",
-      padding: "50px 350px",
+      padding: "90px 550px",
       backgroundImage: "url('src/assets/whats.png')",
       backgroundSize: "cover",
-      backgroundPosition: "center",
       color: "#48A771",
       border: "none",
       borderRadius: "20px",
       cursor: "pointer",
       fontSize: "36px",
-      marginLeft:"400px"
     }}
   >
     Compre pelo WhatsApp
-</button>
+  </button>
+</div>
 
       </div>
       <nav className="navbar navbar-expand-lg navbar-dark bg header">
@@ -269,6 +308,7 @@ const Header = () => {
                   border: "1px solid black",
                 }}
               />
+              
               <button
                 className="btn rounded-pill px-4"
                 type="submit"

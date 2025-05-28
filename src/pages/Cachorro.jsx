@@ -59,6 +59,16 @@ const Cachorro= () => {
               Buscar
             </button>
           </form>
+              {/* Retângulo grande azul */}
+          <div
+            style={{
+              width:" 1280px",
+              height: "422px",
+              backgroundColor: "#8ECEF2",
+              marginTop:" 300px"
+            }}
+          ></div>
+   
         </div>
       </nav>
     
