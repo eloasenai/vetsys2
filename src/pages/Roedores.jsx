@@ -62,11 +62,23 @@ const Roedores = () => {
         </div>
       </nav>
 
-      <div style={{ marginTop: "90px", textAlign: "center" }}>
+      <div style={{ marginTop: "90px", textAlign: "center", position: "relative" }}>
         <img
           src="src/assets/img/Roedores.img/fundoImagem.png"
-          alt="Gato"
+          alt="Fundo Verde"
           style={{ width: "2037px", height: "600px" }}
+        />
+        <img
+          src="src/assets/img/Roedores.img/coelhos.png" 
+          alt="coelho"
+          style={{
+            position: "absolute",
+            top: "-50px",
+            left: "50%",
+            width: "1200px",
+            height: "600px",
+           marginLeft:"-150px",
+          }}
         />
       </div>
       {/* RAÇÃO */}
@@ -126,9 +138,10 @@ const Roedores = () => {
               alt: "Ração 3",
               info: [
                 "Ração premium para coelhos",
-                "Ingredientes: Feno, beterraba, alfafa",
-                "Peso: 1.5kg",
-                "Indicação: Coelhos adultos",
+                "Ingredientes: Cenoura desidratada, vegetais e grãos",
+                "Tamanho: 1,2kg",
+                "Idade: Adultos",
+                "Preço: 103,90",
               ],
             },
             {
@@ -137,8 +150,9 @@ const Roedores = () => {
               info: [
                 "Ração Nutrópica para porquinhos-da-índia",
                 "Ingredientes: Feno, ervilha, alfafa",
-                "Peso: 1.2kg",
-                "Indicação: Porquinhos-da-índia",
+                "Tamanho:1,2kg",
+                "Idade: Adulto",
+                "Preço: 95,90",
               ],
             },
             {
@@ -147,8 +161,9 @@ const Roedores = () => {
               info: [
                 "Ração Muesli para hamsters",
                 "Ingredientes: Grãos, sementes, frutas secas",
-                "Peso: 300g",
-                "Indicação: Hamsters",
+                "Tamanho:300g",
+                "Idade: Adultos e sênior",
+                "Preço: 39,90",
               ],
             },
           ].map((item, index) => (
@@ -182,7 +197,21 @@ const Roedores = () => {
               >
                 {item.info.map((infoItem, infoIndex) => (
                   <li key={infoIndex}>
-                    {infoItem.startsWith("Preço:") ? (
+                    {infoIndex === 0 ? ( // Nome do produto (primeiro item) em negrito
+                      <strong>{infoItem}</strong>
+                    ) : infoItem.trim().startsWith("Ingredientes:") ? (
+                      <>
+                        <strong>Ingredientes:</strong> {infoItem.replace("Ingredientes:", "").trim()}
+                      </>
+                    ) : infoItem.trim().startsWith("Tamanho:") ? (
+                      <>
+                        <strong>Tamanho:</strong> {infoItem.replace("Tamanho:", "").trim()}
+                      </>
+                    ) : infoItem.trim().startsWith("Idade:") ? (
+                      <>
+                        <strong>Idade:</strong> {infoItem.replace("Idade:", "").trim()}
+                      </>
+                    ) : infoItem.trim().startsWith("Preço:") ? (
                       <span style={{ fontWeight: "bold", color: "red" }}>{infoItem}</span>
                     ) : (
                       infoItem
@@ -313,7 +342,21 @@ const Roedores = () => {
                 >
                   {item.info.map((infoItem, infoIndex) => (
                     <li key={infoIndex}>
-                      {infoItem.startsWith("Preço:") ? (
+                      {infoIndex === 0 ? ( // Nome do produto (primeiro item) em negrito
+                        <strong>{infoItem}</strong>
+                      ) : infoItem.trim().startsWith("Ingredientes:") ? (
+                        <>
+                          <strong>Ingredientes:</strong> {infoItem.replace("Ingredientes:", "").trim()}
+                        </>
+                      ) : infoItem.trim().startsWith("Tamanho:") ? (
+                        <>
+                          <strong>Tamanho:</strong> {infoItem.replace("Tamanho:", "").trim()}
+                        </>
+                      ) : infoItem.trim().startsWith("Idade:") ? (
+                        <>
+                          <strong>Idade:</strong> {infoItem.replace("Idade:", "").trim()}
+                        </>
+                      ) : infoItem.trim().startsWith("Preço:") ? (
                         <span style={{ fontWeight: "bold", color: "red" }}>{infoItem}</span>
                       ) : (
                         infoItem
@@ -428,7 +471,21 @@ const Roedores = () => {
                 >
                   {item.info.map((infoItem, infoIndex) => (
                     <li key={infoIndex}>
-                      {infoItem.startsWith("Preço:") ? (
+                      {infoIndex === 0 ? ( // Nome do produto (primeiro item) em negrito
+                        <strong>{infoItem}</strong>
+                      ) : infoItem.trim().startsWith("Ingredientes:") ? (
+                        <>
+                          <strong>Ingredientes:</strong> {infoItem.replace("Ingredientes:", "").trim()}
+                        </>
+                      ) : infoItem.trim().startsWith("Tamanho:") ? (
+                        <>
+                          <strong>Tamanho:</strong> {infoItem.replace("Tamanho:", "").trim()}
+                        </>
+                      ) : infoItem.trim().startsWith("Idade:") ? (
+                        <>
+                          <strong>Idade:</strong> {infoItem.replace("Idade:", "").trim()}
+                        </>
+                      ) : infoItem.trim().startsWith("Preço:") ? (
                         <span style={{ fontWeight: "bold", color: "red" }}>{infoItem}</span>
                       ) : (
                         infoItem
@@ -446,3 +503,4 @@ const Roedores = () => {
   );
 };
 export default Roedores;
+
