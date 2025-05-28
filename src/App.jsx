@@ -1,12 +1,12 @@
 import "./App.css";
 import React from "react";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router";
+import { BrowserRouter, Routes, Route, useLocation, Link } from "react-router";
 import Header from "./components/header/Header";
 import Cadastro from "./pages/Cadastro";
 import Entrar from "./pages/Entrar";
 import Gato from "./pages/Gato";
 import Cachorro from "./pages/Cachorro";
-import Passaros from "./pages/Passaros.jsx";
+import Passaros from "./pages/Passaros";
 import Roedores from "./pages/Roedores";
 import Promocoes from "./pages/Promocoes";
 import Footer from "./components/footer/Footer";
@@ -38,10 +38,10 @@ const AppWrapper = () => {
         <Route path="/roedores" element={<Roedores />} />
         <Route path="/promocoes" element={<Promocoes />} />
       </Routes>
+      <Footer />
     </>
   );
 };
-
 
 const App = () => {
   return (

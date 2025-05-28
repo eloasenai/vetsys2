@@ -69,7 +69,7 @@ const Gato = () => {
         <img
           src="src/assets/img/gato.img/Gato.png"
           alt="Gato"
-          style={{ width: "2037px", height: "600px" }}
+          style={{ width: "2030px", height: "600px" }}
         />
       </div>
 
@@ -89,7 +89,8 @@ const Gato = () => {
             fontFamily: "Yeseva One",
             fontSize: "70px",
             marginBottom: "20px",
-            marginRight: "1300px",
+            marginRight: "1400px", // Ajuste para alinhar o título à direita
+           
           }}
         >
           RAÇÃO:
@@ -102,6 +103,7 @@ const Gato = () => {
             flexWrap: "wrap",
             gap: "20px",
             justifyContent: "center",
+            fontFamily: "Itim, cursive", // Fonte para as descrições das rações
           }}
         >
           {[
@@ -180,7 +182,7 @@ const Gato = () => {
               <p style={{ fontSize: "14px", margin: "5px 0" }}>
                 <strong>Idade:</strong> {item.idade}
               </p>
-              <p style={{ fontSize: "14px", margin: "5px 0", color: "#FF0000" }}>
+              <p style={{ fontSize: "20px", margin: "5px 0", color: "#fe0101" }}>
                 <strong>Preço:</strong> {item.preco}
               </p>
             </div>
@@ -190,32 +192,28 @@ const Gato = () => {
         {/* PETISCO */}
         <h1
           style={{
+            margin:"24px",
             color: "#FFBD00",
             fontFamily: "Yeseva One",
             fontSize: "70px",
             marginBottom: "20px",
-            marginRight: "1300px",
-            marginTop: "100px",
+            marginRight: "1400px",
+           
           }}
         >
           PETISCO:
         </h1>
 
-        {/* Petiscos com rolagem horizontal */}
-        <div
-          style={{
-            overflowX: "auto",
-            whiteSpace: "nowrap",
-            width: "100%",
-            paddingBottom: "40px",
-          }}
-        >
+       
           <div
             style={{
-              display: "inline-flex",
+              display: "flex",
               gap: "20px",
               padding: "20px",
-              marginLeft:"140px",
+              fontFamily:"Itim, cursive", 
+              justifyContent: "center",
+              flexWrap: "wrap",
+              width: "100%",   
             }}
           >
             {[
@@ -273,7 +271,7 @@ const Gato = () => {
                   alt={item.nome}
                   style={{
                     width: "280px",
-                    height: "280px",
+                    height: "290px",
                     objectFit: "cover",
                     borderRadius: "5px",
                     marginBottom: "10px",
@@ -286,7 +284,7 @@ const Gato = () => {
                 <p style={{ fontSize: "14px", margin: "5px 0" }}>
                   <strong>Tamanho:</strong> {item.tamanho}
                 </p>
-                <p style={{ fontSize: "14px", margin: "5px 0", color: "#FF0000" }}>
+                <p style={{ fontSize: "20px", margin: "5px 0", color: "#ff0000" }}>
                   <strong>Preço:</strong> {item.preco}
                 </p>
               </div>
@@ -301,8 +299,7 @@ const Gato = () => {
             fontFamily: "Yeseva One",
             fontSize: "70px",
             marginBottom: "20px",
-            marginRight: "1300px",
-            marginTop: "100px",
+          marginLeft:"175px",
           }}
         >
           AREIA:
@@ -316,6 +313,8 @@ const Gato = () => {
             gap: "20px",
             justifyContent: "center",
             marginTop: "20px",
+            width: "100%",
+            fontFamily: "Itim, cursive", // Fonte para as descrições das areias
             
           }}
         >
@@ -389,14 +388,14 @@ const Gato = () => {
                 <p style={{ fontSize: "14px", margin: "5px 0" }}>
                   <strong>Peso:</strong> {item.peso}
                 </p>
-                <p style={{ fontSize: "14px", margin: "5px 0", color: "#FF0000" }}>
+                <p style={{ fontSize: "20px", margin: "5px 0", color: "#ff0000" }}>
                   <strong>Preço:</strong> {item.preco}
                 </p>
               </div>
             </div>
           ))}
         </div>
-      </div>
+     
     </>
   );
 };
