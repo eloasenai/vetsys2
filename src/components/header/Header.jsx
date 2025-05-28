@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router"; // Corrigido de "react-router" para "react-router-dom"
+import { Link, useNavigate } from "react-router";
 import gatoecachorro from "../../assets/img/gatoecachorro.png";
 
 const Header = () => {
@@ -7,7 +7,6 @@ const Header = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const navigate = useNavigate();
 
-  // Simula a autenticação após cadastro
   useEffect(() => {
     const user = localStorage.getItem("user"); // Corrigido o uso de `useEffect` (faltavam parênteses)
     setIsAuthenticated(!!user);
@@ -28,78 +27,7 @@ const Header = () => {
 
   return (
     <header>
-      {/* Barra de pesquisa */}
-      {/* <div className="search-bar">
-        <input
-          type="text"
-          placeholder="Pesquisar..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)} // Adicionado para atualizar o estado
-        />
-      </div> */}
-      <div className="image-container" style={{ position: "relative" }}>
-        <img
-          src={gatoecachorro}
-          alt="Descrição da imagem"
-          style={{
-            marginTop: "200px",
-            marginLeft: "350px",
-            height: "250px",
-            borderRadius: "30px",
-          }}
-        />
-
-        {/* Botões acima da imagem */}
-        <div
-          style={{
-            position: "absolute",
-            top: "-40px",
-            left: "50%",
-            transform: "translateX(-50%)",
-            display: "flex",
-            gap: "10px",
-          }}
-        >
-          <button style={{ padding: "10px 20px", borderRadius: "5px" }}>
-            Botão 1
-          </button>
-          <button style={{ padding: "10px 20px", borderRadius: "5px" }}>
-            Botão 2
-          </button>
-          <button style={{ padding: "10px 20px", borderRadius: "5px" }}>
-            Botão 3
-          </button>
-          <button style={{ padding: "10px 20px", borderRadius: "5px" }}>
-            Botão 4
-          </button>
-          <button style={{ padding: "10px 20px", borderRadius: "5px" }}>
-            Botão 5
-          </button>
-        </div>
-
-        <div
-          style={{
-            position: "absolute",
-            top: "151px",
-            right: "355px",
-            width: "150px",
-            height: "150px",
-            backgroundColor: "#ffffff",
-            borderRadius: "50%",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            fontSize: "30px",
-            fontWeight: "bold",
-            color: "#8ECEF2",
-            boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
-          }}
-        >
-          20% off
-        </div>
-      </div>
-      {/* separando codigos */}
-      <div className="d-flex justify-content-evenly gap-3 py-3">
+      <div className="d-flex justify-content-evenly gap-3 py-3 position-position-absolute">
         {["Gato", "Cachorro", "Pássaros", "Roedores", "Promoções"].map(
           (label) => (
             <Link
@@ -107,24 +35,78 @@ const Header = () => {
               to={`/${label.toLowerCase()}`}
               className="btn"
               style={{
-                border: "1px solid black",
+                marginTop: "120px",
                 borderRadius: "15px",
-                padding: "20px 60px",
-                backgroundImage: "./assets/images/botão.png",
-                backgroundPosition: "center",
-                backgroundColor: "white",
-                margin: "0 10px",
-                textDecoration: "none",
-                color: "black",
+                padding: "0", 
+                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)", 
+                position: "relative", // Define o contêiner como relativo
+                textAlign: "center", // Centraliza o texto
               }}
             >
-              {label}
+              <img
+                src="src/assets/img/botão.png" 
+                alt={label}
+                style={{
+                  width: "300px", 
+                  height: "auto",
+                  borderRadius: "15px", // Bordas arredondadas
+                }}
+              />
+              <span
+                style={{
+                  position: "absolute", 
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%)", 
+                  color: "black", 
+                  fontSize: "20px", 
+                }}
+              >
+                {label}
+              </span>
             </Link>
           )
         )}
       </div>
-     {/* separando os codigos  */}
-      <div className="image-container">
+
+      <div className="image-container" style={{ position: "relative" }}>
+        <img
+          src={gatoecachorro}
+          alt="Descrição da imagem"
+          style={{
+            marginTop: "50px",
+            marginLeft: "350px",
+            height: "300px",
+            borderRadius: "30px",
+            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+            width: "1750px",
+          }}
+        />
+      </div>
+
+      <div
+        style={{
+          position: "absolute",
+          top: "220px",
+          right: "355px",
+          width: "150px",
+          height: "150px",
+          backgroundColor: "#ffffff",
+          borderRadius: "50%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          fontSize: "30px",
+          fontWeight: "bold",
+          color: "#8ECEF2",
+          boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
+        }}
+      >
+        20% off
+      </div>
+
+      <div 
+      className="image-container">
         {/* Blocos amarelos */}
         <div className="yellow-blocks">
           <div className="yellow-block">
@@ -144,10 +126,28 @@ const Header = () => {
             <span>Retire e troque na loja</span>
           </div>
         </div>
+{/* --------------------- */}
+        <p className="" 
+        style={{
+          fontSize:"30px",
+           fontWeight:"bold", 
+           color: " black", 
+           marginLeft:"150px", 
+           marginTop:"90px"
+          }}
 
-        <p className="" style={{fontSize:"30px", fontWeight:"bold", color: " black", marginLeft:"150px", marginTop:"90px"}}
         >Produtos para cachorro</p>
- <div className="new-image-container">
+
+ <div className="new-image-container"
+  style={{
+    display: "flex",
+    justifyContent: "center",
+    gap: "50px",
+    flexWrap: "wrap",
+    marginTop: "20px",
+  }}
+  >
+    {/* -------------------------- */}
   <img
     src="src/assets/img/RacaoCachorro.png"
     alt="Nova Imagem"
@@ -170,10 +170,27 @@ const Header = () => {
    
   />
 </div>
+<p className="" 
+        style={{
+          fontSize:"30px",
+           fontWeight:"bold", 
+           color: " black", 
+           marginLeft:"150px", 
+           marginTop:"90px"
+          }}
 
-<p className="" style={{fontSize:"30px", fontWeight:"bold", color: " black", marginLeft:"150px", marginTop:"90px"}}
-        >Produtos para gato</p>
-<div className="new-image-container">
+        >Produtos para cachorro</p>
+
+ <div className="new-image-container"
+  style={{
+    display: "flex",
+    justifyContent: "center",
+    gap: "50px",
+    flexWrap: "wrap",
+    marginTop: "20px",
+  }}
+  >
+    {/* -------------------------- */}
   <img
     src="src/assets/img/RacaoGato.png"
     alt="Nova Imagem"
@@ -238,26 +255,29 @@ const Header = () => {
 <p className="custom-image-text">R$00,00</p>
 </div>
 
-
-
-<button
+<div
+  style={{
+    display: "flex",
+    justifyContent: "center", 
+    marginTop: "60px", 
+  }}
+>
+  <button
     onClick={() => window.open("https://wa.me/5599999999999", "_blank")}
     style={{
-      marginTop: "60px",
-      padding: "50px 350px",
+      padding: "90px 550px",
       backgroundImage: "url('src/assets/whats.png')",
       backgroundSize: "cover",
-      backgroundPosition: "center",
       color: "#48A771",
       border: "none",
       borderRadius: "20px",
       cursor: "pointer",
       fontSize: "36px",
-      marginLeft:"400px"
     }}
   >
     Compre pelo WhatsApp
-</button>
+  </button>
+</div>
 
       </div>
       <nav className="navbar navbar-expand-lg navbar-dark bg header">
@@ -268,7 +288,8 @@ const Header = () => {
               src="src/assets/img/logo.png"
               alt="Logo"
               className="logo"
-              style={{ height: "80px" }}
+              width={50}
+              style={{ height: "40px" }}
             />
           </Link>
 
@@ -276,17 +297,18 @@ const Header = () => {
           <div className="d-flex align-items-center mx-auto w-50">
             <form className="d-flex flex-grow-1 me-3" onSubmit={handleSearch}>
               <input
-                className="form-control me-2 rounded-pill shadow-sm"
+                className="form-control me-2 rounded-pill bg-light bg-opacity-75 shadow-sm"
                 type="search"
                 placeholder="O que seu pet precisa?"
                 aria-label="Search"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 style={{
-                  backgroundColor: "#0000001c",
-                  border: "1px solid black", // Borda preta
+                  backdropFilter: "blur(4px)",
+                  border: "1px solid black",
                 }}
               />
+              
               <button
                 className="btn rounded-pill px-4"
                 type="submit"
