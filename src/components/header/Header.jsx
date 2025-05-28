@@ -311,8 +311,8 @@ const Header = () => {
               src="src/assets/img/logo.png"
               alt="Logo"
               className="logo"
-              width={50}
-              style={{ height: "40px" }}
+              width={95}
+              style={{ height: "95px" }}
             />
           </Link>
 
