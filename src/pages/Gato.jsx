@@ -195,7 +195,7 @@ const Gato = () => {
             fontSize: "70px",
             marginBottom: "20px",
             marginRight: "1300px",
-            marginTop: "250px",
+            marginTop: "100px",
           }}
         >
           PETISCO:
@@ -215,6 +215,7 @@ const Gato = () => {
               display: "inline-flex",
               gap: "20px",
               padding: "20px",
+              marginLeft:"140px",
             }}
           >
             {[
@@ -291,6 +292,109 @@ const Gato = () => {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Título "AREIA" */}
+        <h1
+          style={{
+            color: "#FFBD00",
+            fontFamily: "Yeseva One",
+            fontSize: "70px",
+            marginBottom: "20px",
+            marginRight: "1300px",
+            marginTop: "100px",
+          }}
+        >
+          AREIA:
+        </h1>
+
+        {/* Imagens e descrições das areias */}
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "20px",
+            justifyContent: "center",
+            marginTop: "20px",
+            
+          }}
+        >
+          {[
+            {
+              src: "areia1.png",
+              nome: "Areia Sanitária Premium",
+              tipo: "Granulada",
+              peso: "4kg",
+              preco: "R$ 25,90",
+            },
+            {
+              src: "areia2.png",
+              nome: "Areia Natural",
+              tipo: "Biodegradável",
+              peso: "5kg",
+              preco: "R$ 29,90",
+            },
+            {
+              src: "areia3.png",
+              nome: "Areia Clássica",
+              tipo: "Argila",
+              peso: "3kg",
+              preco: "R$ 19,90",
+            },
+            {
+              src: "areia4.png",
+              nome: "Areia Ultra",
+              tipo: "Absorvente",
+              peso: "6kg",
+              preco: "R$ 35,90",
+            },
+            {
+              src: "areia5.png",
+              nome: "Areia Aromática",
+              tipo: "Com fragrância",
+              peso: "2kg",
+              preco: "R$ 22,90",
+            },
+          ].map((item, index) => (
+            <div
+              key={index}
+              style={{
+                width: "320px",
+                backgroundColor: "white",
+                borderRadius: "10px",
+                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Sombra para destacar o quadrado
+                display: "flex",
+                flexDirection: "column", // Alinha imagem e descrição verticalmente
+                alignItems: "center",
+                padding: "20px",
+              }}
+            >
+              {/* Imagem da areia */}
+              <img
+                src={`src/assets/img/gato.img/${item.src}`}
+                alt={item.nome}
+                style={{
+                  width: "280px",
+                  height: "auto",
+                  borderRadius: "5px",
+                  marginBottom: "10px",
+                }}
+              />
+              {/* Descrição dentro do quadrado */}
+              <div style={{ textAlign: "center" }}>
+                <h3 style={{ fontSize: "18px", margin: "5px 0" }}>{item.nome}</h3>
+                <p style={{ fontSize: "14px", margin: "5px 0" }}>
+                  <strong>Tipo:</strong> {item.tipo}
+                </p>
+                <p style={{ fontSize: "14px", margin: "5px 0" }}>
+                  <strong>Peso:</strong> {item.peso}
+                </p>
+                <p style={{ fontSize: "14px", margin: "5px 0", color: "#FF0000" }}>
+                  <strong>Preço:</strong> {item.preco}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </>
