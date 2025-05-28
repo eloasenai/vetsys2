@@ -37,29 +37,28 @@ const Header = () => {
               style={{
                 marginTop: "120px",
                 borderRadius: "15px",
-                padding: "0", 
-                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)", 
+                padding: "0",
+                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
                 position: "relative", // Define o contêiner como relativo
                 textAlign: "center", // Centraliza o texto
               }}
             >
               <img
-                src="src/assets/img/botão.png" 
+                src="src/assets/img/botão.png"
                 alt={label}
                 style={{
-                  width: "300px", 
-                  height: "auto",
+                  width: "300px",
                   borderRadius: "15px", // Bordas arredondadas
                 }}
               />
               <span
                 style={{
-                  position: "absolute", 
+                  position: "absolute",
                   top: "50%",
                   left: "50%",
-                  transform: "translate(-50%, -50%)", 
-                  color: "black", 
-                  fontSize: "20px", 
+                  transform: "translate(-50%, -50%)",
+                  color: "black",
+                  fontSize: "20px",
                 }}
               >
                 {label}
@@ -74,12 +73,12 @@ const Header = () => {
           src={gatoecachorro}
           alt="Descrição da imagem"
           style={{
-            marginTop: "50px",
-            marginLeft: "250px",
+            marginTop: "100px",
+            marginLeft: "350px",
             height: "300px",
             borderRadius: "30px",
             boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-            width: "1500px",
+            width: "1800px",
           }}
         />
       </div>
@@ -87,10 +86,10 @@ const Header = () => {
       <div
         style={{
           position: "absolute",
-          top: "27%",
-          right: "11%",
-          width: "150px",
-          height: "150px",
+          top: "290px",
+          right: "295px",
+          width: "160px",
+          height: "160px",
           backgroundColor: "#ffffff",
           borderRadius: "50%",
           display: "flex",
@@ -105,8 +104,13 @@ const Header = () => {
         20% off
       </div>
 
-      <div 
-      className="image-container">
+      <div
+        className="image-container"
+        style={{
+          position: "absolute",
+          width: "2515px",
+        }}
+      >
         {/* Blocos amarelos */}
         <div className="yellow-blocks">
           <div className="yellow-block">
@@ -126,159 +130,178 @@ const Header = () => {
             <span>Retire e troque na loja</span>
           </div>
         </div>
-{/* --------------------- */}
-        <p className="" 
-        style={{
-          fontSize:"30px",
-           fontWeight:"bold", 
-           color: " black", 
-           marginLeft:"150px", 
-           marginTop:"90px"
+        {/* --------------------- */}
+        <p
+          className=""
+          style={{
+            fontSize: "30px",
+            fontWeight: "bold",
+            color: " black",
+            marginLeft: "150px",
+            marginTop: "90px",
           }}
+        >
+          Produtos para cachorro
+        </p>
 
-        >Produtos para cachorro</p>
-
- <div className="new-image-container"
-  style={{
-    display: "flex",
-    justifyContent: "center",
-    gap: "50px",
-    flexWrap: "wrap",
-    marginTop: "20px",
-  }}
-  >
-    {/* -------------------------- */}
-  <img
-    src="src/assets/img/RacaoCachorro.png"
-    alt="Nova Imagem"
-  />
-  <img
-    src="src/assets/img/BrinquedosCachorro.png"
-    alt="Nova Imagem"
-  />
-  <img
-    src="src/assets/img/PetiscosCachorro.png"
-    alt="Nova Imagem"
-  />
-  <img
-    src="src/assets/img/ColeirCachorro.png"
-    alt="Nova Imagem" 
-  />
-  <img
-    src="src/assets/img/FarmaciaCachorro.png"
-    alt="Nova Imagem"
-   
-  />
-</div>
-<p className="" 
-        style={{
-          fontSize:"30px",
-           fontWeight:"bold", 
-           color: " black", 
-           marginLeft:"150px", 
-           marginTop:"90px"
+        <div
+          className="new-image-container"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "50px",
+            flexWrap: "wrap",
+            marginTop: "20px",
           }}
+        >
+          {/* -------------------------- */}
+          <img src="src/assets/img/RacaoCachorro.png" alt="Nova Imagem" />
+          <img src="src/assets/img/BrinquedosCachorro.png" alt="Nova Imagem" />
+          <img src="src/assets/img/PetiscosCachorro.png" alt="Nova Imagem" />
+          <img src="src/assets/img/ColeirCachorro.png" alt="Nova Imagem" />
+          <img src="src/assets/img/FarmaciaCachorro.png" alt="Nova Imagem" />
+        </div>
+        <p
+          className=""
+          style={{
+            fontSize: "30px",
+            fontWeight: "bold",
+            color: " black",
+            marginLeft: "150px",
+            marginTop: "90px",
+          }}
+        >
+          Produtos para gato
+        </p>
 
-        >Produtos para cachorro</p>
+        <div
+          className="new-image-container"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "50px",
+            flexWrap: "wrap",
+            marginTop: "20px",
+          }}
+        >
+          {/* -------------------------- */}
+          <img src="src/assets/img/RacaoGato.png" alt="Nova Imagem" />
+          <img src="src/assets/img/Areia.png" alt="Nova Imagem" />
+          <img src="src/assets/img/Petiscogato.png" alt="Nova Imagem" />
+          <img src="src/assets/img/Arranhador.png" alt="Nova Imagem" />
+          <img src="src/assets/img/FarmaciaGato.png" alt="Nova Imagem" />
+        </div>
 
- <div className="new-image-container"
-  style={{
-    display: "flex",
-    justifyContent: "center",
-    gap: "50px",
-    flexWrap: "wrap",
-    marginTop: "20px",
-  }}
-  >
-    {/* -------------------------- */}
-  <img
-    src="src/assets/img/RacaoGato.png"
-    alt="Nova Imagem"
-  />
-  <img
-    src="src/assets/img/Areia.png"
-    alt="Nova Imagem"
-  />
-  <img
-    src="src/assets/img/Petiscogato.png"
-    alt="Nova Imagem"
-  />
-  <img
-    src="src/assets/img/Arranhador.png"
-    alt="Nova Imagem" 
-  />
-  <img
-    src="src/assets/img/FarmaciaGato.png"
-    alt="Nova Imagem"
-   
-  />
-</div>
+        <p
+          className=""
+          style={{
+            fontSize: "70px",
+            marginTop: "90px",
+            color: "#CBB883",
+            textAlign: "center",
+          }}
+        >
+          Nossa Linha
+        </p>
 
-<p className="" style={{fontSize:"70px", marginTop:"90px", color:"#CBB883", textAlign:"center"}}
-        >Nossa Linha</p>
+        {/* ---------------------------------------- */}
 
-<div className="custom-image-container">
-  <img
-    src="src/assets/img/SnackGato.png"
-    className="custom-image"
-    alt="Snack para Gato"
-  />
-<p className="custom-image-text">R$00,00</p>
-     
-  <img
-    src="src/assets/img/KitPop.png"
-    className="custom-image"
-    alt="Kit Pop"
-  />
-<p className="custom-image-text">R$00,00</p>
-      
-  <img
-    src="src/assets/img/ZenPet.png"
-    className="custom-image"
-    alt="Zen Pet"
-  />
-<p className="custom-image-text">R$00,00</p>
-     
-<img
-  src="src/assets/img/Caixa.png"
-  className="custom-image"
- alt="Caixa"
-/>
-<p className="custom-image-text">R$00,00</p>
+        <div
+          className="custom-image-container"
+          style={{
+            display: "flex",
+            justifyContent: "center", 
+            height: "auto", 
+            flexWrap: "wrap",
+            marginTop: "80px", 
+          }}
+        >
+          {[
+            {
+              src: "src/assets/img/dogs (9).png",
+              alt: "Snack para Gato",
+              description: "Petiscos saborosos para seu cachorro.",
+            },
+            {
+              src: "src/assets/img/dogs (8).png",
+              alt: "Kit Pop",
+              description: "Petiscos saborosos para seu gato.",
+            },
+            {
+              src: "src/assets/img/dogs (10).png",
+              alt: "Zen Pet",
+              description: "Ração para todos os tamanhos.",
+            },
+            {
+              src: "src/assets/img/dogs (11).png",
+              alt: "Caixa",
+              description: "ganhe desconto na compra desses produtos.",
+            },
+          ].map((item) => (
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center", 
+                textAlign: "center", 
+              }}
+            >
+              <img
+                src={item.src}
+                alt={item.alt}
+                style={{
+                  width: "600px", 
+                  borderRadius: "10px", 
+                  boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+                }}
+              />
+              <p
+                style={{
+                  margin: "20px", 
+                  fontWeight: "bold",
+                  fontSize: "14px",
+                }}
+              >
+                {item.price}
+              </p>
+              <p
+                style={{
+                  fontSize: "30px",
+                  color: "#000000", 
+                }}
+              >
+                {item.description}
+              </p>
+            </div>
+          ))}
+        </div>
 
-<img
-  src="src/assets/img/SpecialDog.png"
-  className="custom-image"
+        {/* ---------------------------------------- */}
 
-  alt="SpecialDog"
-/>
-<p className="custom-image-text">R$00,00</p>
-</div>
-
-<div
-  style={{
-    display: "flex",
-    justifyContent: "center", 
-    marginTop: "60px", 
-  }}
->
-  <button
-    onClick={() => window.open("https://wa.me/5599999999999", "_blank")}
-    style={{
-      padding: "90px 550px",
-      backgroundImage: "url('src/assets/whats.png')",
-      backgroundSize: "cover",
-      color: "#48A771",
-      border: "none",
-      borderRadius: "20px",
-      cursor: "pointer",
-      fontSize: "36px",
-    }}
-  >
-    Compre pelo WhatsApp
-  </button>
-</div>
-
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "60px",
+          }}
+        >
+          <button
+            onClick={() => window.open("https://wa.me/5599999999999", "_blank")}
+            style={{
+              padding: "90px 550px",
+              backgroundImage: "url('src/assets/whats.png')",
+              backgroundSize: "cover",
+              color: "#48A771",
+              border: "none",
+              borderRadius: "20px",
+              cursor: "pointer",
+              fontSize: "36px",
+              marginBottom: "100px",
+            }}
+          >
+            Compre pelo WhatsApp
+          </button>
+        </div>
       </div>
       <nav className="navbar navbar-expand-lg navbar-dark bg header">
         <div className="container-fluid d-flex justify-content-between align-items-center">
@@ -308,7 +331,7 @@ const Header = () => {
                   border: "1px solid black",
                 }}
               />
-              
+
               <button
                 className="btn rounded-pill px-4"
                 type="submit"
@@ -322,7 +345,7 @@ const Header = () => {
               </button>
             </form>
 
-            {/* Ícone da sacola */}
+            {/* Ícones  */}
             <div className="d-flex align-items-center gap-3 fs-4 text-dark">
               <Link to="/contato" title="Contato" className="text-dark">
                 <i className="bi bi-telephone"></i>
