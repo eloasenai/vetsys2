@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Cachorro= () => {
+const Cachorro = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearch = (e) => {
@@ -63,8 +63,51 @@ const Cachorro= () => {
    
         </div>
       </nav>
-    
-      </>
-  )}
 
-      export default Cachorro;
+      {/* Imagem principal */}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          marginTop: "90px",
+        }}
+      >
+        <img
+          src="src/assets/img/Catioro.img/imagem.png"
+          alt="Imagem Cachorro"
+          style={{
+            width: "2037px",
+            maxWidth: "9700px",
+            height: "600px",
+          }}
+        />
+      </div>
+
+      {/* Quadrados brancos centralizados */}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          gap: "20px",
+          marginTop: "200px",
+        }}
+      >
+        {[1, 2, 3, 4,].map((item) => (
+          <div
+            key={item}
+            style={{
+              width: "320px",
+              height: "320px",
+              backgroundColor: "white",
+              boxShadow: "0 2px 5px rgba(0,0,0,0.2)",
+              borderRadius: "8px",
+            }}
+          ></div>
+        ))}
+      </div>
+    </>
+  );
+};
+
+export default Cachorro;
