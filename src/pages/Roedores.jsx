@@ -65,11 +65,11 @@ const Cachorro = () => {
       </nav>
 
       {/* Imagem do roedores */}
-      <div style={{ marginTop: "90px", textAlign: "center" }}>
+      <div style={{ marginTop: "2px", textAlign: "center" }}>
         <img
           src="src/assets/img/Roedores.img/roedores.png"
           alt="Roedores"
-          style={{ width: "2550px", height: "1000px" }}
+          style={{ width: "2020px", height: "1000px" }}
         />
       </div>
 

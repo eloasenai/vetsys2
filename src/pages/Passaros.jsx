@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Pássaros= () => {
+const Passaros= () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearch = (e) => {
