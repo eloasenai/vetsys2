@@ -27,8 +27,8 @@ const Header = () => {
 
   return (
     <header>
-      <div className="d-flex justify-content-evenly gap-3 py-3 position-position-absolute">
-        {["Gato", "Cachorro", "Pássaros", "Roedores", "Promoções"].map(
+      <div className="d-flex justify-content-evenly gap-3 py-3 position-position-absolute" style={{fontSize:"800px", fontFamily:"Otomanopee One",}}>
+        {["Gato", "Cachorro", "Pássaros", "Roedores", "Ofertas"].map(
           (label) => (
             <Link
               key={label}
@@ -41,6 +41,7 @@ const Header = () => {
                 boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
                 position: "relative", // Define o contêiner como relativo
                 textAlign: "center", // Centraliza o texto
+                
               }}
             >
               <img
