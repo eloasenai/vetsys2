@@ -76,6 +76,199 @@ const Promocoes = () => {
           }}
         />
       </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center", // Centraliza os quadrados horizontalmente
+          gap: "20px", // Adiciona espaçamento entre os quadrados
+          marginTop: "20px", // Adiciona margem superior
+          flexWrap: "wrap", // Permite que os quadrados quebrem para a próxima linha em telas menores
+        }}
+      >
+        {/* Ração */}
+        <img
+          style={{
+            width: "450px",
+            height: "100%",
+            gap: "40px",
+            marginRight: "200px",
+          }}
+          src="src/assets/img/promoções/Group 39.png"
+          alt="Ração"
+        />
+
+        {/* Petisco */}
+        <img
+          style={{
+            width: "450px",
+            height: "100%",
+            gap: "40px",
+            marginRight: "200px",
+          }}
+          src="src/assets/img/promoções/Group 40.png"
+          alt="Petisco"
+        />
+
+        {/* Acessórios */}
+        <img
+          style={{
+            width: "450px",
+            height: "100%",
+            gap: "40px",
+            marginRight: "20px",
+          }}
+          src="src/assets/img/promoções/Group 41.png"
+          alt="Acessórios"
+        />
+      </div>
+
+      {/* Remédios */}
+      <h1
+        style={{
+          color: "#FFBD00",
+          fontFamily: "Yeseva One",
+          fontSize: "70px",
+          marginBottom: "20px",
+          textAlign: "center",
+        }}
+      >
+        Remédios
+      </h1>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "nowrap", // Impede que os remédios quebrem para a próxima linha
+          gap: "20px", // Adiciona espaçamento entre os remédios
+          justifyContent: "center", // Centraliza os remédios horizontalmente
+          overflowX: "auto", // Adiciona rolagem horizontal caso o espaço não seja suficiente
+          padding: "10px",
+        }}
+      >
+        {/* Remédio 1 */}
+        <div
+          style={{
+            width: "300px",
+            height: "500px",
+            backgroundColor: "#ffffff", // Fundo branco
+            borderRadius: "10px", // Bordas arredondadas
+            boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Adiciona uma sombra leve
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <img
+            style={{
+              width: "90%", // Ajusta a largura da imagem dentro do retângulo
+              height: "50%", // Ajusta a altura da imagem dentro do retângulo
+              objectFit: "cover", // Ajusta a imagem sem distorção
+              borderRadius: "5px", // Bordas arredondadas para a imagem
+            }}
+            src="src/assets/img/promoções/remedio1.png"
+            alt="Remédio 1"
+          />
+        </div>
+
+        {/* Remédio 2 */}
+        <div
+          style={{
+            width: "450px",
+            height: "300px",
+            backgroundColor: "#ffffff", // Fundo branco
+            borderRadius: "10px", // Bordas arredondadas
+            boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Adiciona uma sombra leve
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <img
+            style={{
+              width: "90%", // Ajusta a largura da imagem dentro do retângulo
+              height: "90%", // Ajusta a altura da imagem dentro do retângulo
+              objectFit: "cover", // Ajusta a imagem sem distorção
+              borderRadius: "5px", // Bordas arredondadas para a imagem
+            }}
+            src="src/assets/img/promoções/remedio2.png"
+            alt="Remédio 2"
+          />
+        </div>
+
+        {/* Remédio 3 */}
+        <div
+          style={{
+            width: "450px",
+            height: "300px",
+            backgroundColor: "#ffffff", // Fundo branco
+            borderRadius: "10px", // Bordas arredondadas
+            boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Adiciona uma sombra leve
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <img
+            style={{
+              width: "90%", // Ajusta a largura da imagem dentro do retângulo
+              height: "90%", // Ajusta a altura da imagem dentro do retângulo
+              objectFit: "cover", // Ajusta a imagem sem distorção
+              borderRadius: "5px", // Bordas arredondadas para a imagem
+            }}
+            src="src/assets/img/promoções/remedio3.png"
+            alt="Remédio 3"
+          />
+        </div>
+
+        {/* Remédio 4 */}
+        <div
+          style={{
+            width: "450px",
+            height: "300px",
+            backgroundColor: "#ffffff", // Fundo branco
+            borderRadius: "10px", // Bordas arredondadas
+            boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Adiciona uma sombra leve
+          
+          
+          }}
+        >
+          <img
+            style={{
+           
+              width: "90%", // Ajusta a largura da imagem dentro do retângulo
+              height: "90%", // Ajusta a altura da imagem dentro do retângulo
+              objectFit: "cover", // Ajusta a imagem sem distorção
+              borderRadius: "5px", // Bordas arredondadas para a imagem
+            }}
+            src="src/assets/img/promoções/remedio4.png"
+            alt="Remédio 4"
+          />
+        </div>
+
+        {/* Remédio 5 */}
+        <div
+          style={{
+            width: "450px",
+            height: "300px",
+            backgroundColor: "#ffffff", // Fundo branco
+            borderRadius: "10px", // Bordas arredondadas
+            boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Adiciona uma sombra leve
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <img
+            style={{
+              width: "90%", // Ajusta a largura da imagem dentro do retângulo
+              height: "90%", // Ajusta a altura da imagem dentro do retângulo
+              objectFit: "cover", // Ajusta a imagem sem distorção
+              borderRadius: "5px", // Bordas arredondadas para a imagem
+            }}
+            src="src/assets/img/promoções/remedio5.png"
+            alt="Remédio 5"
+          />
+        </div>
+      </div>
     </>
   );
 };

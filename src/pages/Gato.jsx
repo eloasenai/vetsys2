@@ -155,7 +155,6 @@ const Gato = () => {
                 backgroundColor: "white",
                 borderRadius: "10px",
                 boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-                display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
                 padding: "15px",
@@ -182,7 +181,7 @@ const Gato = () => {
               <p style={{ fontSize: "14px", margin: "5px 0" }}>
                 <strong>Idade:</strong> {item.idade}
               </p>
-              <p style={{ fontSize: "20px", margin: "5px 0", color: "#fe0101" }}>
+              <p style={{ fontSize: "14px", margin: "5px 0", color: "#fe0101" }}>
                 <strong>Preço:</strong> {item.preco}
               </p>
             </div>
@@ -260,7 +259,6 @@ const Gato = () => {
                   backgroundColor: "white",
                   borderRadius: "10px",
                   boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-                  display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
                   padding: "15px",
@@ -284,7 +282,7 @@ const Gato = () => {
                 <p style={{ fontSize: "14px", margin: "5px 0" }}>
                   <strong>Tamanho:</strong> {item.tamanho}
                 </p>
-                <p style={{ fontSize: "20px", margin: "5px 0", color: "#ff0000" }}>
+                <p style={{ fontSize: "14px", margin: "5px 0", color: "#ff0000" }}>
                   <strong>Preço:</strong> {item.preco}
                 </p>
               </div>
@@ -358,13 +356,12 @@ const Gato = () => {
             <div
               key={index}
               style={{
+             
                 width: "320px",
                 backgroundColor: "white",
                 borderRadius: "10px",
-                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Sombra para destacar o quadrado
-                display: "flex",
+                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Sombra para destacar o quadrado          
                 flexDirection: "column", // Alinha imagem e descrição verticalmente
-                alignItems: "center",
                 padding: "20px",
               }}
             >
@@ -380,7 +377,6 @@ const Gato = () => {
                 }}
               />
               {/* Descrição dentro do quadrado */}
-              <div style={{ textAlign: "center" }}>
                 <h3 style={{ fontSize: "18px", margin: "5px 0" }}>{item.nome}</h3>
                 <p style={{ fontSize: "14px", margin: "5px 0" }}>
                   <strong>Tipo:</strong> {item.tipo}
@@ -388,11 +384,11 @@ const Gato = () => {
                 <p style={{ fontSize: "14px", margin: "5px 0" }}>
                   <strong>Peso:</strong> {item.peso}
                 </p>
-                <p style={{ fontSize: "20px", margin: "5px 0", color: "#ff0000" }}>
+                <p style={{ fontSize: "14px", margin: "5px 0", color: "#ff0000" }}>
                   <strong>Preço:</strong> {item.preco}
                 </p>
               </div>
-            </div>
+            
           ))}
         </div>
      
