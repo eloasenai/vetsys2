@@ -69,7 +69,9 @@ const Cachorro = () => {
         <img
           src="src/assets/img/Roedores.img/roedores.png"
           alt="Roedores"
-          style={{ width: "2550px", height: "1000px" }}
+          style={{
+             width: "2510px",
+              height: "1100px" }}
         />
       </div>
 

@@ -69,7 +69,9 @@ const Gato = () => {
         <img
           src="src/assets/img/gato.img/Gato.png"
           alt="Gato"
-          style={{ width: "2550px", height: "1000px" }}
+          style={{
+             width: "2510px",
+             height: "1100px" }}
         />
       </div>
 
@@ -194,8 +196,9 @@ const Gato = () => {
             fontFamily: "Yeseva One",
             fontSize: "70px",
             marginBottom: "20px",
-            marginRight: "1300px",
+            textAlign: "center", // Centraliza o título
             marginTop: "100px",
+            marginRight: "1300px", // Ajusta a margem direita para alinhar com o título da ração
           }}
         >
           PETISCO:
@@ -204,10 +207,12 @@ const Gato = () => {
         {/* Petiscos com rolagem horizontal */}
         <div
           style={{
-            overflowX: "auto",
-            whiteSpace: "nowrap",
-            width: "100%",
-            paddingBottom: "40px",
+            display: "flex", // Flexbox para alinhar os itens
+            justifyContent: "center", // Centraliza os itens horizontalmente
+            flexWrap: "wrap", // Permite quebra de linha se necessário
+            gap: "20px", // Espaçamento entre os itens
+            padding: "20px",
+            marginTop: "20px",
           }}
         >
           <div
@@ -215,7 +220,7 @@ const Gato = () => {
               display: "inline-flex",
               gap: "20px",
               padding: "20px",
-              marginLeft:"140px",
+              marginLeft:"20px",
             }}
           >
             {[

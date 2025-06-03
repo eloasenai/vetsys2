@@ -70,7 +70,7 @@ const Header = () => {
 
       <div className="image-container" style={{ position: "relative" }}>
         <img
-          src={gatoecachorro}
+          src="src/assets/img/imginicio.png" // Substituído pelo caminho correto da imagem
           alt="Descrição da imagem"
           style={{
             marginTop: "100px",
