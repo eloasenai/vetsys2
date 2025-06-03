@@ -67,9 +67,9 @@ const Cachorro = () => {
       {/* Imagem do cachorro */}
       <div style={{ marginTop: "90px", textAlign: "center" }}>
         <img
-          src="src/assets/img/Catioro.img/imagem.png"
+          src="src/assets/img/Catioro.img/dogs.png"
           alt="Cachorro"
-          style={{ width: "2550px", height: "920px" }}
+          style={{ width: "2550px", height: "1000px" }}
         />
       </div>
 

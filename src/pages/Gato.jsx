@@ -69,7 +69,7 @@ const Gato = () => {
         <img
           src="src/assets/img/gato.img/Gato.png"
           alt="Gato"
-          style={{ width: "2037px", height: "600px" }}
+          style={{ width: "2550px", height: "1000px" }}
         />
       </div>
 
