@@ -20,9 +20,9 @@ const AppWrapper = () => {
     "/cadastro",
     "/gato",
     "/cachorro",
-    "/passaros",
+    "/pássaros",
     "/roedores",
-    "/promocoes",
+    "/ofertas",
   ];
   const shouldHideHeader = hideHeaderRoutes.includes(location.pathname);
 
@@ -34,9 +34,9 @@ const AppWrapper = () => {
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/gato" element={<Gato />} />
         <Route path="/cachorro" element={<Cachorro />} />
-        <Route path="/passaros" element={<Passaros />} />
+        <Route path="/pássaros" element={<Passaros />} />
         <Route path="/roedores" element={<Roedores />} />
-        <Route path="/promocoes" element={<Promocoes />} />
+        <Route path="/ofertas" element={<Promocoes />} />
       </Routes>
       <Footer />
     </>

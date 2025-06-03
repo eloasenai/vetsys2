@@ -28,7 +28,7 @@ const Header = () => {
   return (
     <header>
       <div className="d-flex justify-content-evenly gap-3 py-3 position-position-absolute" style={{fontSize:"800px", fontFamily:"Otomanopee One",}}>
-        {["Gato", "Cachorro", "Pássaros", "Roedores", "Promoções"].map(
+        {["Gato", "Cachorro", "Pássaros", "Roedores", "Ofertas"].map(
           (label) => (
             <Link
               key={label}

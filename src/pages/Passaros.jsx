@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Passaros= () => {
+const Pássaros= () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearch = (e) => {
@@ -59,20 +59,9 @@ const Passaros= () => {
               Buscar
             </button>
           </form>
-              {/* Retângulo grande azul */}
-          <div
-            style={{
-              width:" 1280px",
-              height: "422px",
-              backgroundColor: "#8ECEF2",
-              marginTop:" 300px"
-            }}
-          ></div>
-   
         </div>
       </nav>
-    
       </>
-  )}
-
-      export default Passaros;
+  );
+}
+export default Pássaros;
