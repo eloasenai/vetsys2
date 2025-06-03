@@ -1,9 +1,7 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 
-const Cachorro = () => {
+const Passaros= () => {
   const [searchTerm, setSearchTerm] = useState("");
-
-  const scrollRef = useRef(null);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -410,4 +408,4 @@ const Cachorro = () => {
   );
 };
 
-export default Cachorro;
+export default Passaros;

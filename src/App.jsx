@@ -1,12 +1,12 @@
 import "./App.css";
 import React from "react";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router";
+import { BrowserRouter, Routes, Route, useLocation, Link } from "react-router";
 import Header from "./components/header/Header";
 import Cadastro from "./pages/Cadastro";
 import Entrar from "./pages/Entrar";
 import Gato from "./pages/Gato";
 import Cachorro from "./pages/Cachorro";
-import Passaros from "./pages/Passaros.jsx";
+import Passaros from "./pages/Passaros";
 import Roedores from "./pages/Roedores";
 import Promocoes from "./pages/Promocoes";
 import Footer from "./components/footer/Footer";
@@ -20,9 +20,9 @@ const AppWrapper = () => {
     "/cadastro",
     "/gato",
     "/cachorro",
-    "/passaros",
+    "/pássaros",
     "/roedores",
-    "/promocoes",
+    "/ofertas",
   ];
   const shouldHideHeader = hideHeaderRoutes.includes(location.pathname);
 
@@ -34,14 +34,14 @@ const AppWrapper = () => {
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/gato" element={<Gato />} />
         <Route path="/cachorro" element={<Cachorro />} />
-        <Route path="/passaros" element={<Passaros />} />
+        <Route path="/pássaros" element={<Passaros />} />
         <Route path="/roedores" element={<Roedores />} />
-        <Route path="/promocoes" element={<Promocoes />} />
+        <Route path="/ofertas" element={<Promocoes />} />
       </Routes>
+      <Footer />
     </>
   );
 };
-
 
 const App = () => {
   return (
