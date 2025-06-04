@@ -65,14 +65,11 @@ const Promocoes = () => {
       {/* Imagem de oferta */}
       <div style={{ marginTop: "90px", textAlign: "center" }}>
         <img
-          src="src/assets/img/promoções/ofertas.png" // Substitua pelo caminho correto da imagem de oferta
+          src="src/assets/img/promoções/imagemp.png" // Substitua pelo caminho correto da imagem de oferta
           alt="Oferta"
           style={{
-            width: "2030px", // Define a largura fixa da imagem
-            height: "900px", // Define a altura fixa da imagem
-            objectFit: "cover", // Ajusta a imagem sem distorção
-            borderRadius: "10px", // Adiciona bordas arredondadas
-            boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Adiciona uma sombra leve
+            width: "2510px", // Define a largura fixa da imagem
+            height: "1100px", // Define a altura fixa da imagem
           }}
         />
       </div>
@@ -81,7 +78,7 @@ const Promocoes = () => {
           display: "flex",
           justifyContent: "center", // Centraliza os quadrados horizontalmente
           gap: "20px", // Adiciona espaçamento entre os quadrados
-          marginTop: "20px", // Adiciona margem superior
+          marginTop: "50px", // Adiciona margem superior
           flexWrap: "wrap", // Permite que os quadrados quebrem para a próxima linha em telas menores
         }}
       >
