@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router";
-import gatoecachorro from "../../assets/img/gatoecachorro.png";
 
 const Header = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -416,7 +415,7 @@ const Header = () => {
       {/* FOOTER */}
       <footer
         style={{
-          marginBottom: "1000px",
+          marginBottom: "1600px",
           width: "100px",
           textAlign: "center",
         }}
