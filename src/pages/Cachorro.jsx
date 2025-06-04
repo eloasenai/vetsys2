@@ -1,14 +1,39 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import axios from "axios"; // Importa Axios para chamadas HTTP
 
 const Cachorro = () => {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState(""); // Estado para o termo de busca
+  const [dadosRacao, setDadosRacao] = useState([]); // Estado para armazenar os dados da API
+  const [dadosPetisco, setDadosPetisco] = useState([]); // Estado para armazenar os dados da API
+  const [dadosBrinquedo, setDadosBrinquedo] = useState([]); // Estado para armazenar os dados da API
+  const inputRef = useRef(null); // Referência para o campo de busca
 
-  const scrollRef = useRef(null);
-
+  // Função de busca
   const handleSearch = (e) => {
     e.preventDefault();
     console.log("Buscando por:", searchTerm);
   };
+
+  // Chamada à API
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const [racoesRes, petiscosRes, brinquedosRes] = await Promise.all([
+          axios.get("https://localhost:7040/api/Cachorro/racoes"),
+          axios.get("https://localhost:7040/api/Cachorro/petiscos"),
+          axios.get("https://localhost:7040/api/Cachorro/brinquedos"),
+        ]);
+
+        setDadosRacao(racoesRes.data);
+        setDadosPetisco(petiscosRes.data);
+        setDadosBrinquedo(brinquedosRes.data);
+      } catch (error) {
+        console.error("Erro ao buscar dados da API:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <>
@@ -61,8 +86,6 @@ const Cachorro = () => {
               Buscar
             </button>
           </form>
- 
-   
         </div>
       </nav>
 
@@ -97,7 +120,7 @@ const Cachorro = () => {
         </h1>
 
         {/* Imagens das rações */}
-        <div 
+        <div
           style={{
             display: "flex",
             flexWrap: "wrap",
@@ -106,9 +129,8 @@ const Cachorro = () => {
           }}
         >
           {[
-          
             {
-              src: "src/assets/img/Catioro.img/ração.png",
+              src: "public/img/Catioro.img/ração.png",
               nome: "Origens Premium",
               ingredientes: "Carne e Frango",
               tamanho: "10,1kg",
@@ -116,7 +138,7 @@ const Cachorro = () => {
               preco: "R$ 185,90",
             },
             {
-              src: "src/assets/img/Catioro.img/ração1.png",
+              src: "public/img/Catioro.img/ração1.png",
               nome: "Special Golden",
               ingredientes: "Frango e Carne",
               tamanho: "15 kg",
@@ -124,7 +146,7 @@ const Cachorro = () => {
               preco: "R$ 180,90",
             },
             {
-              src: "src/assets/img/Catioro.img/ração2.png",
+              src: "public/img/Catioro.img/ração2.png",
               nome: "Royal Canin",
               ingredientes: "Carne",
               tamanho: "10,1kg",
@@ -132,7 +154,7 @@ const Cachorro = () => {
               preco: "R$ 175,90",
             },
             {
-              src: "src/assets/img/Catioro.img/ração3.png",
+              src: "public/img/Catioro.img/ração3.png",
               nome: "Guabi Natural",
               ingredientes: "Cordeiro e Aveia",
               tamanho: "12 kg",
@@ -140,15 +162,21 @@ const Cachorro = () => {
               preco: "R$ 269,90",
             },
             {
-              src: "src/assets/img/Catioro.img/ração4.png",
+              src: "public/img/Catioro.img/ração4.png",
               nome: "Dog Chow",
               ingredientes: "Frango, Carne e Arroz",
               tamanho: "15 kg",
               idade: "Adulto",
               preco: "R$ 224,90",
             },
-
-            
+            {
+              src: "public/img/Catioro.img/ração5.png",
+              nome: "Premier Pet",
+              ingredientes: "Carne e Frango",
+              tamanho: "15 kg",
+              idade: "Adulto",
+              preco: "R$ 199,90",
+            },
           ].map((item, index) => (
             <div
               key={index}
@@ -184,7 +212,9 @@ const Cachorro = () => {
               <p style={{ fontSize: "14px", margin: "5px 0" }}>
                 <strong>Idade:</strong> {item.idade}
               </p>
-              <p style={{ fontSize: "14px", margin: "5px 0", color: "#FF0000" }}>
+              <p
+                style={{ fontSize: "14px", margin: "5px 0", color: "#FF0000" }}
+              >
                 <strong>Preço:</strong> {item.preco}
               </p>
             </div>
@@ -219,35 +249,35 @@ const Cachorro = () => {
         >
           {[
             {
-              src: "src/assets/img/Catioro.img/bifinho.jpg",
+              src: "public/img/Catioro.img/bifinho.jpg",
               nome: "Bifinho Petiscão",
               sabor: "Carne",
               tamanho: "300g",
               preco: "R$ 26,90",
             },
             {
-              src: "src/assets/img/Catioro.img/biscoito.jpg",
+              src: "public/img/Catioro.img/biscoito.jpg",
               nome: "PetDog Biscoito",
               sabor: "mix de trigo",
               tamanho: "1 kg",
               preco: "R$ 30,27",
             },
             {
-              src: "src/assets/img/Catioro.img/frangonatural.jpg",
+              src: "public/img/Catioro.img/frangonatural.jpg",
               nome: "WOW Frango Natural",
               sabor: "Frango",
               tamanho: "50g",
               preco: "R$ 25,50",
             },
             {
-              src: "src/assets/img/Catioro.img/pulmãosuino.jpg",
+              src: "public/img/Catioro.img/pulmãosuino.jpg",
               nome: "LUV Pulmão Suíno",
               sabor: "Suíno",
               tamanho: "80g",
               preco: "R$ 48,90",
             },
             {
-              src: "src/assets/img/Catioro.img/osso.png",
+              src: "public/img/Catioro.img/osso.png",
               nome: "Osso Natural",
               sabor: "Carne",
               tamanho: "900g",
@@ -278,13 +308,31 @@ const Cachorro = () => {
                   marginBottom: "10px",
                 }}
               />
-              <h3 style={{ fontSize: "18px", margin: "5px 0", textAlign: "center" }}>
+              <h3
+                style={{
+                  fontSize: "18px",
+                  margin: "5px 0",
+                  textAlign: "center",
+                }}
+              >
                 {item.nome}
               </h3>
-              <p style={{ fontSize: "14px", margin: "5px 0", textAlign: "center" }}>
+              <p
+                style={{
+                  fontSize: "14px",
+                  margin: "5px 0",
+                  textAlign: "center",
+                }}
+              >
                 <strong>Sabor:</strong> {item.sabor}
               </p>
-              <p style={{ fontSize: "14px", margin: "5px 0", textAlign: "center" }}>
+              <p
+                style={{
+                  fontSize: "14px",
+                  margin: "5px 0",
+                  textAlign: "center",
+                }}
+              >
                 <strong>Tamanho:</strong> {item.tamanho}
               </p>
               <p
@@ -323,7 +371,6 @@ const Cachorro = () => {
             gap: "20px",
             justifyContent: "center",
             marginTop: "20px",
-            
           }}
         >
           {[
@@ -375,7 +422,7 @@ const Cachorro = () => {
                 alignItems: "center",
                 padding: "20px",
                 marginBottom: "200px", // Espaçamento entre os quadrados
-                }}
+              }}
             >
               {/* Imagem da areia */}
               <img
@@ -386,19 +433,26 @@ const Cachorro = () => {
                   height: "auto",
                   borderRadius: "5px",
                   marginBottom: "10px",
-                  
                 }}
               />
               {/* Descrição dentro do quadrado */}
               <div style={{ textAlign: "center" }}>
-                <h3 style={{ fontSize: "18px", margin: "5px 0" }}>{item.nome}</h3>
+                <h3 style={{ fontSize: "18px", margin: "5px 0" }}>
+                  {item.nome}
+                </h3>
                 <p style={{ fontSize: "14px", margin: "5px 0" }}>
                   <strong>Tipo:</strong> {item.tipo}
                 </p>
                 <p style={{ fontSize: "14px", margin: "5px 0" }}>
                   <strong>Peso:</strong> {item.peso}
                 </p>
-                <p style={{ fontSize: "14px", margin: "5px 0", color: "#FF0000" }}>
+                <p
+                  style={{
+                    fontSize: "14px",
+                    margin: "5px 0",
+                    color: "#FF0000",
+                  }}
+                >
                   <strong>Preço:</strong> {item.preco}
                 </p>
               </div>
