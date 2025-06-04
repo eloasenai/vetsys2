@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 
-const Cachorro = () => {
+const Passaros = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const scrollRef = useRef(null);
@@ -68,7 +68,7 @@ const Cachorro = () => {
       <div style={{ marginTop: "90px", textAlign: "center" }}>
         <img
           src="src/assets/img/Passaros.img/aves.png"
-          alt="Roedores"
+          alt="Passaros"
           style={{
              width: "2510px",
               height: "1100px" }}
@@ -410,4 +410,4 @@ const Cachorro = () => {
   );
 };
 
-export default Cachorro;
+export default Passaros;

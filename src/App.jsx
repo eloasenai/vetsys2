@@ -20,7 +20,7 @@ const AppWrapper = () => {
     "/cadastro",
     "/gato",
     "/cachorro",
-    "/pássaros",
+    "/passaros",
     "/roedores",
     "/ofertas",
   ];
@@ -34,7 +34,7 @@ const AppWrapper = () => {
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/gato" element={<Gato />} />
         <Route path="/cachorro" element={<Cachorro />} />
-        <Route path="/pássaros" element={<Passaros />} />
+        <Route path="/passaros" element={<Passaros />} />
         <Route path="/roedores" element={<Roedores />} />
         <Route path="/ofertas" element={<Promocoes />} />
       </Routes>
