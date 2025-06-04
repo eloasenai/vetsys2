@@ -71,7 +71,7 @@ const Header = () => {
 
       <div className="image-container" style={{ position: "relative" }}>
         <img
-          src={gatoecachorro}
+          src="src/assets/img/imginicio.png" // Substituído pelo caminho correto da imagem
           alt="Descrição da imagem"
           style={{
             marginTop: "100px",
@@ -79,7 +79,7 @@ const Header = () => {
             height: "300px",
             borderRadius: "30px",
             boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-            width: "1800px",
+            width: "1330px",
           }}
         />
       </div>
@@ -109,7 +109,7 @@ const Header = () => {
         className="image-container"
         style={{
           position: "absolute",
-          width: "2515px",
+          width: "2015px",
         }}
       >
         {/* Blocos amarelos */}
