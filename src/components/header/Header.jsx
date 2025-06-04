@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router";
-import imginicio from "public/img/imginicio.png";
 
 const Header = () => {
   const [searchTerm, setSearchTerm] = useState("");
