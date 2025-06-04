@@ -65,7 +65,7 @@ const Cachorro = () => {
       </nav>
 
       {/* Imagem do roedores */}
-      <div style={{ marginTop: "2px", textAlign: "center" }}>
+      <div style={{ marginTop: "90px", textAlign: "center" }}>
         <img
           src="src/assets/img/Roedores.img/roedores.png"
           alt="Roedores"

@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
-const Passaros= () => {
+const Cachorro = () => {
   const [searchTerm, setSearchTerm] = useState("");
+
+  const scrollRef = useRef(null);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -59,17 +61,19 @@ const Passaros= () => {
               Buscar
             </button>
           </form>
+ 
+   
         </div>
       </nav>
 
-      {/* Imagem do passaro */}
+      {/* Imagem do cachorro */}
       <div style={{ marginTop: "90px", textAlign: "center" }}>
         <img
-          src="src/assets/img/Passaros.img/aves.png"
-          alt="Aves"
+          src="src/assets/img/Catioro.img/dogs.png"
+          alt="Cachorro"
           style={{ 
-            width: "2510px",
-             height: "1100px" }}
+            width: "2510px", 
+            height: "1100px" }}
         />
       </div>
 
@@ -408,4 +412,4 @@ const Passaros= () => {
   );
 };
 
-export default Passaros;
+export default Cachorro;
