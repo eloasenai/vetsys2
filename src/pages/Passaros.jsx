@@ -61,17 +61,17 @@ const Passaro = () => {
               Buscar
             </button>
           </form>
- 
-   
         </div>
       </nav>
 
-      
+      {/* Imagem do roedores */}
       <div style={{ marginTop: "90px", textAlign: "center" }}>
         <img
           src="src/assets/img/Passaros.img/aves.png"
           alt="Roedores"
-          style={{ width: "2550px", height: "1000px" }}
+          style={{
+             width: "2510px",
+              height: "1100px" }}
         />
       </div>
 
@@ -99,83 +99,85 @@ const Passaro = () => {
           RAÇÃO
         </h1>
 
-{/* Imagens das rações */}
-<div 
-  style={{
-    display: "flex",
-    flexWrap: "nowrap", // Impede que as imagens quebrem para a próxima linha
-    gap: "20px",
-    justifyContent: "center",
-  }}
->
-  {[
-    {
-      src: "src/assets/img/Passaros.img/racao1.webp",
-      nome: "Ração Nutrópica Sementes e Extrusados Natural para Calopsitass",
-      ingredientes: " Sementes e grãos selecionados",
-      tamanho: "300g",
-       idade: "Adulto",
-      Preco: "39,90"
-    },
-    {
-      src: "src/assets/img/Passaros.img/Racao2.png",
-      nome: "Ração Nutrópica para Calopsita Seleção Natural Sementes e Extrusado Mini Bits",
-      ingredientes: "Grãos integrais, sementes e  mini extrusados",
-      tamanho: "300g",
-       idade: "Adulto",
-      Preco: "34,90"
-    },
-    {
-      src: "src/assets/img/Passaros.img/Racao3.webp",
-      nome: "Ração Nutrópica para Calopsitas com Frutas",
-      ingredientes: "Frutas",
-      tamanho: "300g",
-      idade: "Adulto",
-      Preco: "39,90"
-    },
-    {
-      src: "src/assets/img/Passaros.img/Racao4.webp",
-      nome: "Ração Nutrópica para Agapornis com Frutas",
-      ingredientes: "Extrusados e frutas",
-      tamanho: "300g",
-       idade: "Adulto",
-      Preco: "39,90"
-    },
-    {
-      src: "src/assets/img/Passaros.img/Racao5.webp",
-      nome: "Ração para Calopsitas Integral Amigos do Louro José Megazoo",
-      ingredientes: "Sementes",
-      tamanho: "350g",
-       idade: "Adulto",
-      Preco: "34,90"
-    },
-  ].map((item, index) => (
-    <div
-      key={index}
-      style={{
-        width: "320px",
-        backgroundColor: "white",
-        borderRadius: "10px",
-        boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        padding: "15px",
-      }}
-    >
+        {/* Imagens das rações */}
+        <div 
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "20px",
+            justifyContent: "center",
+          }}
+        >
+          {[
+          
+            {
+              src: "src/assets/img/Passaros.img/racaopassaro5.webp",
+              nome: "Papinha para Lóris Nutropica",
+              ingredientes: "frutas e aveia",
+              tamanho: "500g",
+              idade: "filhote",
+              preco: "R$ 80,90",
+            },
+            {
+              src: "src/assets/img/Passaros.img/racaopassaro3.webp",
+              nome: "Nutropica seleção natural Periquito Australiano",
+              ingredientes: "Sementes e grãos selecionadas",
+              tamanho: "300 g",
+              idade: "Adulto",
+              preco: "R$ 29,90",
+            },
+            {
+              src: "src/assets/img/Passaros.img/racaopassaro2.webp",
+              nome: "Extrusados nutiropica para canários",
+              ingredientes: "Extrusados com sementes e frutas",
+              tamanho: "300g",
+              idade: "Adulto",
+              preco: "R$ 36,90",
+            },
+            {
+              src: "src/assets/img/Passaros.img/raçaopassaro1.webp",
+              nome: "extrusados nutiropica para papagaios",
+              ingredientes: "Extrusados com sementes e frutas",
+              tamanho: "300g",
+              idade: "Adulto",
+              preco: "R$ 129,90",
+            },
+            {
+              src: "src/assets/img/Passaros.img/racao6.webp",
+              nome: "papinha psitacideos Nutropica",
+              ingredientes: "Mix frutas",
+              tamanho: "500g",
+              idade: "filhote",
+              preco: "R$ 74,90",
+            },
 
-      <img
-        src={item.src}
-        alt={item.nome}
-        style={{
-          width: "280px",
-          height: "280px",
-          objectFit: "cover",
-          borderRadius: "5px",
-          marginBottom: "10px",
-        }}
-      />
-      <h3 style={{ fontSize: "18px", margin: "5px 0" }}>{item.nome}</h3>
+            
+          ].map((item, index) => (
+            <div
+              key={index}
+              style={{
+                width: "320px",
+                backgroundColor: "white",
+                borderRadius: "10px",
+                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                padding: "15px",
+              }}
+            >
+              <img
+                src={`src/assets/img/gato.img/${item.src}`}
+                alt={item.nome}
+                style={{
+                  width: "280px",
+                  height: "280px",
+                  objectFit: "cover",
+                  borderRadius: "5px",
+                  marginBottom: "10px",
+                }}
+              />
+              <h3 style={{ fontSize: "18px", margin: "5px 0" }}>{item.nome}</h3>
               <p style={{ fontSize: "14px", margin: "5px 0" }}>
                 <strong>Ingredientes:</strong> {item.ingredientes}
               </p>
@@ -209,83 +211,83 @@ const Passaro = () => {
           PETISCO:
         </h1>
 
-
-
-<div 
-  style={{
-    display: "flex",
-    flexWrap: "nowrap", // Impede que as imagens quebrem para a próxima linha
-    gap: "20px",
-    justifyContent: "center",
-  }}
->
-  {[
-    {
-      src: "src/assets/img/Passaros.img/Petisco1.webp",
-      nome: "Biscoito para Papagaios e Araras Biscottini Pet",
-      ingredientes: "Cereias, vitaminas e mel",
-      tamanho: "80g",
-      idade: "Adulto",
-      Preco: "30,500"
-    },
-    {
-      src: "src/assets/img/Passaros.img/Petisco2.webp",
-      nome: "Biscoito para Calopsitas e Periquitos Biscottini Pet",
-      ingredientes: "Cereais",
-      tamanho: "80g",
-      idade: "Adulto",
-      Preco: "30,50"
-    },
-    {
-      src: "src/assets/img/Passaros.img/petisco3.webp",
-      nome: "Bastão Calopsita e Agapornis Vitale ",
-      ingredientes: "Sementes e grãos",
-      tamanho: "90g",
-      idade: "Adulto",
-      Preco: "22,50"
-    },
-    {
-      src: "src/assets/img/Passaros.img/Petisco4.png",
-      nome: "Stick Natural Megazoo Clássico para Calopsitas ",
-      ingredientes: "Grãos, sementes e pimenta rosa",
-      tamanho: "150g",
-      idade: "Adulto",
-      Preco: "36,90"
-    },
-    {
-      src: "src/assets/img/Passaros.img/Petisco5.png",
-      nome: "Stick Natural Megazoo com Ervas, Mel e Ovos para Calopsita",
-      ingredientes: "Sementes, ervas, mel e ovos",
-      tamanho: "120g",
-      idade: "Adulto",
-      Preco: "35,90"
-    },
-  ].map((item, index) => (
-    <div 
-      key={index} 
-      style={{
-        textAlign: "center",
-        width: "200px", // Largura do quadrado
-        padding: "15px", // Espaçamento interno
-        backgroundColor: "#fff", // Fundo branco
-        borderRadius: "10px", // Bordas arredondadas
-        boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Sombra para destaque
-      }}
-    >
-      <img
-        src={item.src}
-        alt={item.nome}
-        style={{
-          width: "280px",
-          height: "280px",
-          objectFit: "cover",
-          borderRadius: "5px",
-          marginBottom: "10px",
-        }}
-        />
-      <h3 style={{ fontSize: "18px", margin: "5px 0" }}>{item.nome}</h3>
-              <p style={{ fontSize: "14px", margin: "5px 0" }}>
-                <strong>Ingredientes:</strong> {item.ingredientes}
+        {/* Petiscos com rolagem horizontal */}
+        <div
+          style={{
+            display: "flex", // Flexbox para alinhar os itens
+            justifyContent: "center", // Centraliza os itens horizontalmente
+            flexWrap: "wrap", // Permite quebra de linha se necessário
+            gap: "20px", // Espaçamento entre os itens
+            padding: "20px",
+            marginTop: "20px",
+          }}
+        >
+          {[
+            {
+              src: "src/assets/img/Passaros.img/petiscopass6.webp ",
+              nome: "Papa de ovo",
+              sabor: "ovo, milho e sementes",
+              tamanho: "250g",
+              preco: "R$ 17,90",
+            },
+            {
+              src: "src/assets/img/Passaros.img/petiscopass1.webp",
+              nome: "Barritas",
+              sabor: "mix de sementes e coco",
+              tamanho: "70g",
+              preco: "R$ 19,90",
+            },
+            {
+              src: "src/assets/img/Passaros.img/petiscopass4.webp",
+              nome: "Papa de frutas",
+              sabor: "Mix de frutas",
+              tamanho: "250g",
+              preco: "R$ 13,70",
+            },
+            {
+              src: "src/assets/img/Passaros.img/petiscopass3.webp",
+              nome: "Barritas",
+              sabor: "Mix de sementes e coco",
+              tamanho: "70g",
+              preco: "R$ 19,90",
+            },
+            {
+              src: "src/assets/img/Passaros.img/petiscopass2.webp",
+              nome: "Tenebrios desidratados",
+              sabor: "Insetos desidratados",
+              tamanho: "25g",
+              preco: "R$ 18,00",
+            },
+          ].map((item, index) => (
+            <div
+              key={index}
+              style={{
+                width: "320px",
+                backgroundColor: "white",
+                borderRadius: "10px",
+                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center", // Centraliza os itens dentro do card
+                padding: "15px",
+              }}
+            >
+              <img
+                src={`src/assets/img/gato.img/${item.src}`}
+                alt={item.nome}
+                style={{
+                  width: "100%", // Ajusta a largura da imagem ao card
+                  height: "200px", // Define uma altura fixa
+                  objectFit: "cover", // Mantém a proporção da imagem
+                  borderRadius: "5px",
+                  marginBottom: "10px",
+                }}
+              />
+              <h3 style={{ fontSize: "18px", margin: "5px 0", textAlign: "center" }}>
+                {item.nome}
+              </h3>
+              <p style={{ fontSize: "14px", margin: "5px 0", textAlign: "center" }}>
+                <strong>Sabor:</strong> {item.sabor}
               </p>
               <p style={{ fontSize: "14px", margin: "5px 0" }}>
                 <strong>Tamanho:</strong> {item.tamanho}
@@ -300,16 +302,110 @@ const Passaro = () => {
           ))}
         </div>
 
-  
+        {/*"ACESSÓRIOs" */}
+        <h1
+          style={{
+            color: "#FFBD00",
+            fontFamily: "Yeseva One",
+            fontSize: "70px",
+            marginBottom: "20px",
+            marginRight: "1100px",
+            marginTop: "100px",
+          }}
+        >
+          BRINQUEDOS:
+        </h1>
 
-
-
-
-
-
-
-
-
+        {/* Imagens e descrições dos acessorios */}
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "20px",
+            justifyContent: "center",
+            marginTop: "20px",
+            
+          }}
+        >
+          {[
+            {
+              src: "src/assets/img/Passaros.img/BrinquedoPass4.png",
+              nome: "escadinha de madeira para aves",
+              tipo: "Madeira",
+              peso: "400g",
+              preco: "R$ 27,90",
+            },
+            {
+              src: "src/assets/img/Passaros.img/BrinquedoPass2.png",
+              nome: "argolas para aves",
+              tipo: "plastico",
+              peso: "300g",
+              preco: "R$ 24,90",
+            },
+            {
+              src: "src/assets/img/Passaros.img/BrinquedoPass1.png",
+              nome: "puleiro de madeira para aves",
+              tipo: "Madeira",
+              peso: "300g",
+              preco: "R$ 24,90",
+            },
+            {
+              src: "src/assets/img/Roedores.img/acessc4.webp",
+              nome: "kit puleiro para aves",
+              tipo: "Madeira",
+              peso: "500g",
+              preco: "R$ 67,99",
+            },
+            {
+              src: "src/assets/img/Passaros.img/brincpass1.webp",
+              nome: "Brinquedo de corda para aves",
+              tipo: "Corda",
+              peso: "400g",
+              preco: "R$ 14,00",
+            },
+          ].map((item, index) => (
+            <div
+              key={index}
+              style={{
+                width: "320px",
+                backgroundColor: "white",
+                borderRadius: "10px",
+                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Sombra para destacar o quadrado
+                display: "flex",
+                flexDirection: "column", // Alinha imagem e descrição verticalmente
+                alignItems: "center",
+                padding: "20px",
+                marginBottom: "200px", // Espaçamento entre os quadrados
+                }}
+            >
+              {/* Imagem da areia */}
+              <img
+                src={`src/assets/img/gato.img/${item.src}`}
+                alt={item.nome}
+                style={{
+                  width: "280px",
+                  height: "auto",
+                  borderRadius: "5px",
+                  marginBottom: "10px",
+                  
+                }}
+              />
+              {/* Descrição dentro do quadrado */}
+              <div style={{ textAlign: "center" }}>
+                <h3 style={{ fontSize: "18px", margin: "5px 0" }}>{item.nome}</h3>
+                <p style={{ fontSize: "14px", margin: "5px 0" }}>
+                  <strong>Tipo:</strong> {item.tipo}
+                </p>
+                <p style={{ fontSize: "14px", margin: "5px 0" }}>
+                  <strong>Peso:</strong> {item.peso}
+                </p>
+                <p style={{ fontSize: "14px", margin: "5px 0", color: "#FF0000" }}>
+                  <strong>Preço:</strong> {item.preco}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
       
       
