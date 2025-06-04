@@ -27,6 +27,10 @@ const Cachorro = () => {
         setDadosRacao(racoesRes.data);
         setDadosPetisco(petiscosRes.data);
         setDadosBrinquedo(brinquedosRes.data);
+
+        console.log("Rações:", racoesRes.data);
+        console.log("Petiscos:", petiscosRes.data);
+        console.log("Brinquedos:", brinquedosRes.data);
       } catch (error) {
         console.error("Erro ao buscar dados da API:", error);
       }
@@ -179,6 +183,16 @@ const Cachorro = () => {
               idade: "Adulto",
               preco: "R$ 199,90",
             },
+            {
+              id: 1,
+              nome: "Ração Premium",
+              preco: "R$ 50,00"
+            },
+            {
+              id: 2,
+              nome: "Ração Standard",
+              preco: "R$ 30,00"
+            }
           ].map((item, index) => (
             <div
               key={index}

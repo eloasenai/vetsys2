@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router";
-import gatoecachorro from "public/img/imginicio.png";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -45,45 +44,27 @@ const Header = () => {
                   
                 }}
               >
-                <img
-                  src="src/assets/img/botão.png"
-                  alt={label}
-                  style={{
-                    width: "300px",
-                    borderRadius: "15px", // Bordas arredondadas
-                  }}
-                />
-                <span
-                  style={{
-                    position: "absolute",
-                    top: "50%",
-                    left: "50%",
-                    transform: "translate(-50%, -50%)",
-                    color: "black",
-                    fontSize: "20px",
-                  }}
-                >
-                  {label}
-                </span>
+                {label}
               </Link>
             )
           )}
         </div>
 
-        <div className="image-container" style={{ position: "relative" }}>
-          <img
-            src="src/assets/img/imginicio.png" // Substituído pelo caminho correto da imagem
-            alt="Descrição da imagem"
-            style={{
-              height: "300px",
-              borderRadius: "30px",
-              boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-              width: "1800px",
-              textAlign: "center",
-              marginLeft: "350px",
-              marginTop: "100px",
-            }}
+        <div>
+          <img 
+          src="src/img/imginicio.png"
+          alt="Imagem inicial"
+          style={{
+            height: "300px",
+            borderRadius: "30px",
+            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+            width: "1800px",
+            textAlign: "center",
+            marginLeft: "350px",
+            marginTop: "100px",
+          }}
           />
+         
         </div>
 
         <div
